@@ -9,7 +9,7 @@ const config = {
     title: 'Typescript ESLint 中文文档',
     tagline: '使用 ESLint 来支持 Typescript',
     url: 'https://www.typescript-eslint.cn',
-    baseUrl: '/',
+    baseUrl: '/typescript-eslint-chinese/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
