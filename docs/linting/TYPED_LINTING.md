@@ -1,42 +1,43 @@
 ---
 id: type-linting
-title: Linting with Type Information
+title: 带类型信息的检测
 sidebar_label: Linting with Type Information
 ---
 
-Under the hood, the typescript-eslint parser uses TypeScript's compiler APIs to parse the files. This means that we can provide lint rules with access to all of the type information that TypeScript knows about your codebase.
+在幕后， typescript-eslint 解析器使用了 TypeScript 的编译器API去解析文件。这意味着我们可以提供检查(lint)规则来访问 TypeScript 所知道你的代码库中所有的类型信息。
 
-To tap into TypeScript's additional powers, there are two small changes you need to make to your config file:
+充分利用 TypeScript 额外的功能前，你需要对你的配置进行两个小的更改：
 
 ```js title=".eslintrc.js"
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  // Added lines start
+  // 从这行开始加
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  // Added lines end
+  // 到这行结束
   plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // Add this line
+    // 添加下面这行
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
 };
 ```
 
-In more detail:
+详解:
 
-- `parserOptions.tsconfigRootDir` tells our parser the absolute path of your project's root directory.
-- `parserOptions.project` tells our parser the relative path where your project's `tsconfig.json` is.
-  - If your project is a multi-package monorepo, see [our docs on configuring a monorepo](./MONOREPO.md).
-- `plugin:@typescript-eslint/recommended-requiring-type-checking` is another recommended configuration we provide. This one contains rules that specifically require type information.
+- `parserOptions.tsconfigRootDir` 告诉解析器项目根目录的绝对路径。
+- `parserOptions.project` 告诉解析器项目中的`tsconfig.json`的相对路径(相对于`parserOptions.tsconfigRootDir`)。
+  - 如果你的项目是多项目包的 monorepo 请看 [我们的文档有关 monorepo 的配置 ](./MONOREPO.md).
+- `plugin:@typescript-eslint/recommended-requiring-type-checking` 是我们推荐的另一个配置。它包含明确必要的类型信息规则。
 
-With that done, run the same lint command you ran before.
-You will see new rules reporting errors based on type information!
+完成后，运行与之前相同的 lint 命令。
+<!-- You will see new rules reporting errors based on type information! -->
+你将看到报告错误基于类型信息的新规则！
 
 ## FAQs
 
@@ -71,6 +72,6 @@ Depending on what you want to achieve:
       - [`tsconfig.eslint.json`](https://github.com/typescript-eslint/typescript-eslint/blob/main/tsconfig.eslint.json)
       - [`.eslintrc.js`](https://github.com/typescript-eslint/typescript-eslint/blob/main/.eslintrc.js)
 
-## Troubleshooting
+## 疑难解答
 
-If you're having problems getting this working, please have a look at our [Troubleshooting FAQ](./TROUBLESHOOTING.md).
+如果在这方面有问题，请查看我们的[疑难解答和FAQ](./TROUBLESHOOTING.md)。

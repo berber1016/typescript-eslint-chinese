@@ -1,21 +1,22 @@
 ---
 id: configs
 sidebar_label: Configurations
-title: Configurations
+title: 配置项
 ---
 
-## Built-In Configurations
+## 内置的配置项
 
-`@typescript-eslint/eslint-plugin` includes built-in configurations you can extend from to pull in the recommended starting rules.
+`@typescript-eslint/eslint-plugin` 包含内置的配置项，你可以从中拓展来引入其他推荐(recommended)规则。
 
-With the exception of `strict`, all configurations are considered "stable".
-Rule additions and removals are treated as breaking changes and will only be done in major version bumps.
+除了`strict`外，所有的配置项都可以被认为是“稳定(`stable`)”的。
+
+规则的添加和删除被认为是"破坏性的更改(breaking changes)"，只有“major”版本才可能会这么做。
 
 ### `eslint-recommended`
 
-This ruleset is meant to be used after extending `eslint:recommended`.
-It disables core ESLint rules that are already checked by the TypeScript compiler.
-Additionally, it enables rules that promote using the more modern constructs TypeScript allows for.
+这个规则集应该是在 `eslint:recommended`拓展后使用。
+
+它禁用了 TypeScript 编译器已经检查过的 ESLint 中还存在的的核心规则。
 
 ```jsonc
 {
@@ -26,13 +27,11 @@ Additionally, it enables rules that promote using the more modern constructs Typ
 }
 ```
 
-This config is automatically included if you use any of the other configurations mentioned on this page.
+如果你使用了本页面中提到的任何配置，这个配置被自动包含在了里面。
 
 ### `recommended`
 
-Recommended rules for code correctness that you can drop in without additional configuration.
-These rules are those whose reports are almost always for a bad practice and/or likely bug.
-`recommended` also disables rules known to conflict with this repository, or cause issues in TypeScript codebases.
+Recommended rules for code correctness that you can drop in without additional configuration.这些规则几乎总是针对糟糕的实践和/或像是bug的规则报告。`recommended` 还禁用已知的与此存储库相冲突(就像`eslint-recommended`中说的那样)或者在 TypeScript 代码库中出现问题的规则。
 
 ```json
 {
@@ -41,13 +40,14 @@ These rules are those whose reports are almost always for a bad practice and/or 
 ```
 
 :::tip
-We strongly recommend all TypeScript projects extend from this configuration.
+我们强烈推荐所有的 TypeScript 项目拓展这个配置。
 :::
 
 ### `recommended-requiring-type-checking`
 
-Additional recommended rules that require type information.
-Rules in this configuration are similarly useful to those in `recommended`.
+额外的推荐(recommended)规则需要类型信息。
+
+这个配置中的规则与 `recommended` 中规则类似。
 
 ```json
 {
@@ -59,14 +59,14 @@ Rules in this configuration are similarly useful to those in `recommended`.
 ```
 
 :::tip
-We recommend all TypeScript projects extend from this configuration, with the caveat that rules using type information take longer to run.
-See [Linting with Type Information](/docs/linting/type-linting) for more details.
+我们推荐所有的 TypeScript 项目拓展这个配置, 需要注意的是使用了类型信息的规则需要更长的运行时间。
+
+请看 [带类型信息的检测](/docs/linting/type-linting) 的更多细节.
 :::
 
 ### `strict`
 
-Additional strict rules that can also catch bugs but are more opinionated than recommended rules.
-
+额外的严格(strict)规则也可以捕获bug，但比推荐(recommended)规则更加 "opinionated"。
 ```json
 {
   "extends": [
@@ -78,15 +78,15 @@ Additional strict rules that can also catch bugs but are more opinionated than r
 ```
 
 :::tip
-We recommend a TypeScript project extend from this configuration only if a nontrivial percentage of its developers are highly proficient in TypeScript.
+只有相当多的开发人员十分精通 TypeScript时，我们才会推荐一个 TypeScript 项目拓展这个配置。
 :::
 
-## Overriding Configurations
+## 最重要的配置
 
-These configurations are our recommended starting points, but **you don't need to use them as-is**.
-ESLint allows you to configure your own rule settings on top of any extended configurations.
-See [ESLint's Configuring Rules docs](https://eslint.org/docs/user-guide/configuring/rules#using-configuration-files).
+这些配置是我们推荐的起点, 但 **你不需要按照原样使用他们**。
+ESLint 允许你在任何拓展配置上配置自己的规则设置。
+请看 [ESLint 配置规则文档](https://eslint.org/docs/user-guide/configuring/rules#using-configuration-files)。
 
-### Suggesting Configuration Changes
+### 建议更改配置
 
-If you feel strongly that a specific rule should (or should not) be one of these configurations, please feel free to [file an issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) along with a **detailed** argument explaining your reasoning.
+如果你强烈认为一个特定的规则应该(或不应该)在这个配置中，请随意[发起一个issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) 并附上一个**详细的**理由来解释你的理论。

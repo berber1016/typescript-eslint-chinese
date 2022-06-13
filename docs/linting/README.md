@@ -214,6 +214,6 @@ module.exports = {
 
 搜索 ["eslint-plugin" 在npm中](https://www.npmjs.com/search?q=eslint-plugin) 了解更多。
 
-## 问题解答
+## 疑难解答
 
-如果在这方面有问题，请查看我们的[FAQ](./TROUBLESHOOTING.md)。
+如果在这方面有问题，请查看我们的[疑难解答和FAQ](./TROUBLESHOOTING.md)。
