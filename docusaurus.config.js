@@ -8,12 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Typescript ESLint 中文文档',
     tagline: '使用 ESLint 来支持 Typescript',
-    url: 'https://your-docusaurus-test-site.com',
+    url: 'https://www.typescript-eslint.cn',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'berber1016', // Usually your GitHub org/user name.
@@ -36,7 +35,10 @@ const config = {
                     sidebarPath: require.resolve('./sidebars.js'),
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    remarkPlugins: [
+                            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]
+                        ]
+                        // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
                 blog: {
                     showReadingTime: true,
@@ -53,19 +55,21 @@ const config = {
 
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+
         ({
         announcementBar: {
             id: 'announcementBar-2', // Increment on change
-            content: `请注意：这里是一个非官方版本的文档，依靠社区维护，欢迎大家参与校对、翻译！⭐️ ⭐️ ⭐️ `,
+            content: `请注意：这里是一个非官方版本的文档，依靠社区(个人QAQ)维护，欢迎大家参与校对、翻译！⭐️ ⭐️ ⭐️ `,
             isCloseable: false
         },
+        metadata: [{ name: 'keywords', content: 'typescript,TypeScript,TypeScript-ESLint,typescript-eslint, typescript-eslint 中文文档' }],
         navbar: {
             hideOnScroll: true,
             title: 'Typescript ESLint 中文文档',
             logo: {
                 alt: 'Typescript ESLint 中文文档 Logo',
                 src: 'img/logo.svg',
-                href: 'https://typescript-eslint.cn'
+                href: 'https://www.typescript-eslint.cn'
             },
             items: [{
                     to: 'docs/',

@@ -1436,6 +1436,15 @@
     "@types/react" "*"
     prop-types "^15.6.2"
 
+"@docusaurus/remark-plugin-npm2yarn@2.0.0-beta.21":
+  version "2.0.0-beta.21"
+  resolved "https://registry.npmjs.org/@docusaurus/remark-plugin-npm2yarn/-/remark-plugin-npm2yarn-2.0.0-beta.21.tgz#10eb88a2dab6193568eff76b6a83b79e313ef765"
+  integrity sha512-CqvmoFEj05NzaQBKxnsfI90aM8KHJZWyCzED/Qg5odUD9VtR9zNQJ1Nu/X1ctqCN7FBIxBYk2tz1Xb1+zCP8gg==
+  dependencies:
+    npm-to-yarn "^1.0.1"
+    tslib "^2.4.0"
+    unist-util-visit "^2.0.3"
+
 "@docusaurus/theme-classic@2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.npmjs.org/@docusaurus/theme-classic/-/theme-classic-2.0.0-beta.21.tgz#6df5b9ea2d389dafb6f59badeabb3eda060b5017"
@@ -5116,6 +5125,11 @@ npm-run-path@^4.0.1:
   dependencies:
     path-key "^3.0.0"
 
+npm-to-yarn@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/npm-to-yarn/-/npm-to-yarn-1.0.1.tgz#6cdb95114c4ff0be50a7a2381d4d16131a5f52df"
+  integrity sha512-bp8T8oNMfLW+N/fE0itFfSu7RReytwhqNd9skbkfHfzGYC+5CCdzS2HnaXz6JiG4AlK2eA0qlT6NJN1SoFvcWQ==
+
 nprogress@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
@@ -6154,6 +6168,14 @@ remark-admonitions@^1.2.1:
     rehype-parse "^6.0.2"
     unified "^8.4.2"
     unist-util-visit "^2.0.1"
+
+remark-docusaurus-tabs@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/remark-docusaurus-tabs/-/remark-docusaurus-tabs-0.2.0.tgz#39e02b2e72a68458c1c11003e95ddb7d236e8006"
+  integrity sha512-Xl8FkeQAdDqlhf7EurBxCkT7cfA5QK2PN8eoFr94g1OOuc7XsgVk897zf8yhNNnpQYR8nd/XC6JaXTZxHxX4mA==
+  dependencies:
+    mdast-util-to-string "^2.0.0"
+    unist-util-visit "^2.0.3"
 
 remark-emoji@^2.2.0:
   version "2.2.0"
