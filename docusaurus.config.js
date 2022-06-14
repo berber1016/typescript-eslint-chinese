@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Typescript ESLint 中文文档',
     tagline: '使用 ESLint 来支持 Typescript',
-    url: 'https://berber1016.github.io/typescript-eslint-chinese/',
+    url: 'https://berber1016.github.io',
     baseUrl: '/typescript-eslint-chinese/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
