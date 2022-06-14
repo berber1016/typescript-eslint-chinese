@@ -38,9 +38,9 @@ module.exports = {
 
 `.cjs`后缀将明确的将文件设置为[CommonJS module](https://nodejs.org/dist/latest-v18.x/docs/api/modules.html),如果你的项目的 package.json中有 `"type": "module"`。
 
-> 注：`"type": "module"` 会使得`.js`结尾的文件将默认采取 `ES Module`来解析，具体可见https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling。
+> 注：`"type": "module"` 会使得`.js`结尾的文件将默认采取 `ES Module`来解析，具体可见[这里](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling)。
 
-如果你的项目中没有使用 ESM， 那么`.eslintrc.js`这个文件名也是可以的。可以查看 [ESLint's Configuration Files docs](https://eslint.org/docs/user-guide/configuring/configuration-files) 了解更多内容。
+如果你的项目中没有使用 ESM， 那么`.eslintrc.js`这个文件名也是可以的。请看 [ESLint配置文件文档](https://eslint.org/docs/user-guide/configuring/configuration-files) 来了解更多。
 :::
 
 ### 详情
@@ -49,12 +49,12 @@ module.exports = {
 
 - `parser: '@typescript-eslint/parser'` 告诉 ESLint 使用你安装的解析包 ([`@typescript-eslint/parser`](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/parser))。
   - 允许 ESLint 理解 TypeScript 语法。
-  - 这个是必须的，否则 ESLint 将会抛出错误，当它尝试解析 TypeScript 代码会认为TypeScript代码是常规的 JavaScript代码。
+  - 这是必须的，否则 ESLint 将会抛出错误，当它尝试解析 TypeScript 代码会认为TypeScript代码是常规的 JavaScript 代码。
 - `plugins: ['@typescript-eslint']` 告诉 ESLint 加载你安装的插件包 ([`@typescript-eslint/eslint-plugin`](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)).
   - 允许你在你的代码库中使用这些规则。
 - `extends: [ ... ]` 告诉 ESLint 你的配置拓展了给定的配置。
-  - `eslint:recommended` 是 ESLint的内置的“推荐”配置 - 它开启了一套小且合理的规则，它是出名的最佳实践。
-  - `plugin:@typescript-eslint/recommended` 是我们(这里我们指 Typescript-eslint )“推荐”配置 - 它就像 `eslint:recommend`, 只不过仅开启的规则来自我们(这里我们指 Typescript-eslint )的 TypeScript-specific 插件。
+  - `eslint:recommended` 是 ESLint的内置的推荐(recommended)配置 - 它开启了一套小且合理的规则，它是出名的最佳实践。
+  - `plugin:@typescript-eslint/recommended` 是我们(这里我们指 Typescript-eslint )推荐(recommended)配置 - 它就像 `eslint:recommend`, 只不过仅开启的规则来自我们(这里我们指 Typescript-eslint )的 TypeScript-specific 插件。
 ### 忽略不必要的文件
 
 接下来， 创建一个 `.eslintignore` 文件在你的项目的根目录。
@@ -112,10 +112,11 @@ npm run lint
 ```
 
 :::note
-如果你使用了非标准的文件后缀，你需要显式的告诉 ESLint 检查这些后缀使用这个[`--ext` 标记](https://eslint.org/docs/user-guide/command-line-interface#--ext)
+如果你使用了非标准的文件后缀，你需要显式的告诉 ESLint 检查这些后缀使用这个[`--ext`](https://eslint.org/docs/user-guide/command-line-interface#--ext)标记。
 :::
 
 你还可以在绝大多数 IDE 中通过插件来实时获取结果 - 搜索你的 IDE 拓展。
+> 注：例如在 vscode的 extensions中搜索`tslint`。
 
 ## 下一步
 

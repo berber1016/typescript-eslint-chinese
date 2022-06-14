@@ -8,11 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Typescript ESLint 中文文档',
     tagline: '使用 ESLint 来支持 Typescript',
-    url: 'https://www.typescript-eslint.cn',
+    url: 'https://berber1016.github.io/typescript-eslint-chinese/',
     baseUrl: '/typescript-eslint-chinese/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.ico',
+    // favicon: '',
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'berber1016', // Usually your GitHub org/user name.
@@ -67,11 +67,11 @@ const config = {
         navbar: {
             hideOnScroll: true,
             title: 'Typescript ESLint 中文文档',
-            logo: {
-                alt: 'Typescript ESLint 中文文档 Logo',
-                src: 'img/logo.svg',
-                href: 'https://www.typescript-eslint.cn'
-            },
+            // logo: {
+            //     alt: 'Typescript ESLint 中文文档 Logo',
+            //     src: 'img/logo.svg',
+            //     href: 'https://berber1016.github.io/typescript-eslint-chinese/'
+            // },
             items: [{
                     to: 'docs/',
                     position: 'left',
@@ -83,11 +83,11 @@ const config = {
                 //     position: 'right',
                 // },
                 // { to: '/rules', label: '规则', position: 'left' },
-                // {
-                //     href: 'https://github.com/facebook/docusaurus',
-                //     label: 'GitHub',
-                //     position: 'right',
-                // },
+                {
+                    href: 'https://github.com/berber1016/typescript-eslint-chinese',
+                    label: 'GitHub',
+                    position: 'right',
+                },
             ],
         },
         footer: {
@@ -129,7 +129,7 @@ const config = {
                 //       ],
                 //   },
             ],
-            copyright: `备案`,
+            // copyright: `备案`,
         },
         prism: {
             theme: lightCodeTheme,
