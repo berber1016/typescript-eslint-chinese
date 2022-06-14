@@ -1,18 +1,18 @@
 ---
 id: troubleshooting
-title: Troubleshooting & FAQs
+title: 排查问题 & FAQs
 sidebar_label: Troubleshooting & FAQs
 ---
 
-## I am using a rule from ESLint core, and it doesn't work correctly with TypeScript code
+## 我使用了一个来自 ESLint 核心规则，但是它在 TypeScript 代码中正常工作
 
-This happens because TypeScript adds new features that ESLint doesn't know about.
+这是因为 TypeScript 添加了 ESLint 并不知道的新特性。
 
-The first step is to [check our list of "extension" rules here](https://typescript-eslint.io/rules/#extension-rules).
-An extension rule is a rule which extends the base ESLint rules to support TypeScript syntax.
-If you find it in there, give it a go to see if it works for you.
-You can configure it by disabling the base rule, and turning on the extension rule.
-Here's an example with the `semi` rule:
+第一步，[点击这里查看我们的 "extension" 规则列表](https://typescript-eslint.io/rules/#extension-rules).
+拓展(extension)规则是一种拓展 ESLint 规则来支持 TypeScript 语法的规则。
+如果你在这里找到了它, give it a go to see if it works for you.
+你可以通过禁用基本规则和启用拓展(extension)规则来配置它。
+这里有一个关于 `semi` 规则的例子：
 
 ```json
 {
@@ -23,20 +23,20 @@ Here's an example with the `semi` rule:
 }
 ```
 
-If you don't find an existing extension rule, or the extension rule doesn't work for your case, then you can go ahead and check our issues.
+如果你并没有找到一个现有的拓展(extension)规则，或者拓展(extension)规则对你的 case 并不起作用，那么你可以继续去查我们的 issue。
 [The contributing guide outlines the best way to raise an issue](https://github.com/typescript-eslint/typescript-eslint/blob/main/CONTRIBUTING.md#raising-issues).
 
-> We release a new version our tooling every week.
-> _Please_ ensure that you [check our the latest list of "extension" rules](https://typescript-eslint.io/rules/#extension-rules) **_before_** filing an issue.
+> 我们每周都会发布一个新的版本。
+> **在提交 issue 前**，请确保你已经检查了我们最新版本的[拓展(extension)规则列表](https://typescript-eslint.io/rules/#extension-rules) 
 
-## I get errors telling me "The file must be included in at least one of the projects provided"
+## 我得到一个 error，它告诉我 "The file must be included in at least one of the projects provided"
 
-This error means that the file that's being linted is not included in any of the tsconfig files you provided us.
-This happens when users have test files, config files, or similar that are not included.
+这个错误意味着正在检测的这个文件，并不在你提供的任何一个 tsconfig 文件中。
+当用户有测试文件、配置文件或类似的文件没有包含时，就会发生这样的情况。
 
-There are a couple of solutions to this, depending on what you want to achieve.
+根据您想要达到的目的，有几个解决方案。
 
-See our docs on [type aware linting](./TYPED_LINTING.md#i-get-errors-telling-me-the-file-must-be-included-in-at-least-one-of-the-projects-provided) for solutions to this.
+请参考我们的文档 [type aware linting](./TYPED_LINTING.md#i-get-errors-telling-me-the-file-must-be-included-in-at-least-one-of-the-projects-provided) 来获取解决方案.
 
 ## I use a framework (like Vue) that requires custom file extensions, and I get errors like "You should add `parserOptions.extraFileExtensions` to your config"
 
