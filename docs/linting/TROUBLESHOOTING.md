@@ -38,9 +38,9 @@ sidebar_label: Troubleshooting & FAQs
 
 请参考我们的文档 [type aware linting](./TYPED_LINTING.md#i-get-errors-telling-me-the-file-must-be-included-in-at-least-one-of-the-projects-provided) 来获取解决方案.
 
-## I use a framework (like Vue) that requires custom file extensions, and I get errors like "You should add `parserOptions.extraFileExtensions` to your config"
+## 我是使用了一个需要自定义文件拓展名的框架(例如 Vue)，我得到这样一个错误 "You should add `parserOptions.extraFileExtensions` to your config
 
-You can use `parserOptions.extraFileExtensions` to specify an array of non-TypeScript extensions to allow, for example:
+你可以使用 `parserOptions.extraFileExtensions` 去指定一个允许 非 TypeScript 拓展名的数组，例如：
 
 ```js title=".eslintrc.js"
 module.exports = {
@@ -53,7 +53,7 @@ module.exports = {
 };
 ```
 
-## One of my lint rules isn't working correctly on a pure JavaScript file
+## 我的一个 lint 规则在纯 JavaScript 文件上不能正常工作。 
 
 This is to be expected - ESLint rules do not check file extensions on purpose, as it causes issues in environments that use non-standard extensions (for example, a `.vue` and a `.md` file can both contain TypeScript code to be linted).
 

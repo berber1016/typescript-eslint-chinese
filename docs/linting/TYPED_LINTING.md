@@ -41,16 +41,16 @@ module.exports = {
 
 ## FAQs
 
-### How is performance?
+### 性能如何？
 
 _But wait_ - I hear you exclaim - _why would you ever not want type-aware rules?_
 
-Well (for full disclosure) there is a catch; by including `parserOptions.project` in your config, you are essentially asking TypeScript to do a build of your project before ESLint can do its linting. For small projects this takes a negligible amount of time (a few seconds); for large projects, it can take longer (30s or more).
+这里有一个问题(为了充分公开)。在你的配置中有 `parserOptions.project`，本质上是让 TypeScript 在 ESLint 进行检测（linting）之前构建项目。对于小的项目来说这只需要很少的时间（几秒钟）。对于大型项目，可能需要更长时间（30秒或更多）。
+我们大多数的用户都感到很满意，他们认为强大的静态类型感知分析是值得的。
+<!-- 此外, 大多数用户主要是通过 IDE 插件来处理 lint 错误，通过一些缓存魔法(magic) -->
+Additionally, most users primarily consume lint errors via IDE plugins which, through some caching magic, do not suffer the same penalties.这意味着他们通常仅是在推送之前运行完整的检测(lint)，或者通过他们的 CI，在那里额外的时间真的不重要。
 
-Most of our users are fine with this, as they think the power of type-aware static analysis is worth it.
-Additionally, most users primarily consume lint errors via IDE plugins which, through some caching magic, do not suffer the same penalties. This means that generally they usually only run a complete lint before a push, or via their CI, where the extra time really doesn't matter.
-
-**We strongly recommend you do use type-aware linting**, but the above information is included so that you can make your own, informed decision.
+**我们强烈建议你使用类型感知检测(type-aware linting)**, but the above information is included so that you can make your own, informed decision.
 
 ### I get errors telling me "The file must be included in at least one of the projects provided"
 

@@ -47,6 +47,12 @@ const config = {
                     // Remove this to remove the "edit this page" links.
                     editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
                 },
+                sitemap: {
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    ignorePatterns: ['/'],
+                    filename: 'sitemap.xml',
+                },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },

@@ -1397,7 +1397,7 @@
     "@docusaurus/utils-validation" "2.0.0-beta.21"
     tslib "^2.4.0"
 
-"@docusaurus/plugin-sitemap@2.0.0-beta.21":
+"@docusaurus/plugin-sitemap@2.0.0-beta.21", "@docusaurus/plugin-sitemap@^2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.npmjs.org/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.21.tgz#8bfa695eada2ec95c9376a884641237ffca5dd3d"
   integrity sha512-/ynWbcXZXcYZ6sT2X6vAJbnfqcPxwdGEybd0rcRZi4gBHq6adMofYI25AqELmnbBDxt0If+vlAeUHFRG5ueP7Q==
