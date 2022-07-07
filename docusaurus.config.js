@@ -4,13 +4,43 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const baseDocs = {
+    id: 'base-docs',
+    path: './docs',
+    routeBasePath: 'docs',
+    sidebarPath: require.resolve('./sidebars.docs.js'),
+    showLastUpdateAuthor: true,
+    showLastUpdateTime: true,
+    remarkPlugins: [
+        [require('@docusaurus/remark-plugin-npm2yarn'), {
+            sync: true
+        }]
+    ],
+    breadcrumbs: false,
+};
+
+const ruleDocs = {
+    id: 'rules-docs',
+    path: './rules',
+    sidebarPath: require.resolve('./sidebars.rules.js'),
+    routeBasePath: 'rules',
+    showLastUpdateAuthor: true,
+    showLastUpdateTime: true,
+    breadcrumbs:false,
+    remarkPlugins: [
+        [require('@docusaurus/remark-plugin-npm2yarn'), {
+            sync: true
+        }]
+    ],
+    exclude: ['TEMPLATE.md'],
+};
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Typescript ESLint 中文文档',
     tagline: '使用 ESLint 来支持 Typescript',
     url: 'https://berber1016.github.io',
     baseUrl: '/typescript-eslint-chinese/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'log',
     onBrokenMarkdownLinks: 'warn',
     // favicon: '',
     // GitHub pages deployment config.
@@ -22,8 +52,8 @@ const config = {
     // metadata like html lang. For example, if your site is Chinese, you may want
     // to replace "en" with "zh-Hans".
     i18n: {
-        defaultLocale: 'zh',
-        locales: ['zh'],
+        defaultLocale: 'zh-CN',
+        locales: ['zh-CN'],
     },
 
     presets: [
@@ -31,22 +61,8 @@ const config = {
             'classic',
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
-                docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    breadcrumbs: false,
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    remarkPlugins: [
-                            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]
-                        ]
-                        // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-                },
-                blog: {
-                    showReadingTime: true,
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-                },
+                debug: true,
+                docs: ruleDocs,
                 sitemap: {
                     changefreq: 'weekly',
                     priority: 0.5,
@@ -59,89 +75,100 @@ const config = {
             }),
         ],
     ],
-
+    plugins: [
+        ['@docusaurus/plugin-content-docs', baseDocs],
+    ],
     themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 
         ({
-        announcementBar: {
-            id: 'announcementBar-2', // Increment on change
-            content: `请注意：这里是一个非官方版本的文档，依靠社区(个人QAQ)维护，欢迎大家参与校对、翻译！⭐️ ⭐️ ⭐️ `,
-            isCloseable: false
-        },
-        metadata: [{ name: 'keywords', content: 'typescript,TypeScript,TypeScript-ESLint,typescript-eslint, typescript-eslint 中文文档' }],
-        navbar: {
-            hideOnScroll: true,
-            title: 'Typescript ESLint 中文文档',
-            // logo: {
-            //     alt: 'Typescript ESLint 中文文档 Logo',
-            //     src: 'img/logo.svg',
-            //     href: 'https://berber1016.github.io/typescript-eslint-chinese/'
-            // },
-            items: [{
-                    to: 'docs/',
-                    position: 'left',
-                    activeBasePath: 'docs',
-                    label: '开始',
-                },
-                // {
-                //     type: 'search',
-                //     position: 'right',
+            announcementBar: {
+                id: 'announcementBar-2', // Increment on change
+                content: `请注意：这里是一个非官方版本的文档，依靠社区(个人QAQ)维护，欢迎大家参与校对、翻译！⭐️ ⭐️ ⭐️ `,
+                isCloseable: false
+            },
+            metadata: [{
+                name: 'keywords',
+                content: 'typescript,TypeScript,TypeScript-ESLint,typescript-eslint, typescript-eslint 中文文档'
+            }],
+            navbar: {
+                hideOnScroll: true,
+                title: 'Typescript ESLint 中文文档',
+                // logo: {
+                //     alt: 'Typescript ESLint 中文文档 Logo',
+                //     src: 'img/logo.svg',
+                //     href: 'https://berber1016.github.io/typescript-eslint-chinese/'
                 // },
-                // { to: '/rules', label: '规则', position: 'left' },
-                {
-                    href: 'https://github.com/berber1016/typescript-eslint-chinese',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-            ],
-        },
-        footer: {
-            style: 'dark',
-            links: [
-                // {
-                //       title: 'Docs',
-                //       items: [{
-                //           label: 'Tutorial',
-                //           to: '/docs/intro',
-                //       }, ],
-                //   },
-                //   {
-                //       title: 'Community',
-                //       items: [{
-                //               label: 'Stack Overflow',
-                //               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                //           },
-                //           {
-                //               label: 'Discord',
-                //               href: 'https://discordapp.com/invite/docusaurus',
-                //           },
-                //           {
-                //               label: 'Twitter',
-                //               href: 'https://twitter.com/docusaurus',
-                //           },
-                //       ],
-                //   },
-                //   {
-                //       title: 'More',
-                //       items: [{
-                //               label: 'Blog',
-                //               to: '/blog',
-                //           },
-                //           {
-                //               label: 'GitHub',
-                //               href: 'https://github.com/facebook/docusaurus',
-                //           },
-                //       ],
-                //   },
-            ],
-            // copyright: `备案`,
-        },
-        prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
-        },
-    }),
+                items: [{
+                        to: 'docs/',
+                        activeBasePath: 'docs',
+                        label: '开始',
+                        position: 'left',
+                    },
+                    {
+                        to: 'rules/',
+                        activeBasePath: 'rules',
+                        label: '规则',
+                        position: 'left',
+                    },
+                    // {
+                    //     type: 'search',
+                    //     position: 'right',
+                    // },
+                    // { to: '/rules', label: '规则', position: 'left' },
+                    {
+                        href: 'https://github.com/berber1016/typescript-eslint-chinese',
+                        label: 'GitHub',
+                        position: 'right',
+                    },
+                ],
+            },
+            footer: {
+                style: 'dark',
+                links: [
+                    // {
+                    //       title: 'Docs',
+                    //       items: [{
+                    //           label: 'Tutorial',
+                    //           to: '/docs/intro',
+                    //       }, ],
+                    //   },
+                    //   {
+                    //       title: 'Community',
+                    //       items: [{
+                    //               label: 'Stack Overflow',
+                    //               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                    //           },
+                    //           {
+                    //               label: 'Discord',
+                    //               href: 'https://discordapp.com/invite/docusaurus',
+                    //           },
+                    //           {
+                    //               label: 'Twitter',
+                    //               href: 'https://twitter.com/docusaurus',
+                    //           },
+                    //       ],
+                    //   },
+                    //   {
+                    //       title: 'More',
+                    //       items: [{
+                    //               label: 'Blog',
+                    //               to: '/blog',
+                    //           },
+                    //           {
+                    //               label: 'GitHub',
+                    //               href: 'https://github.com/facebook/docusaurus',
+                    //           },
+                    //       ],
+                    //   },
+                ],
+                // copyright: `备案`,
+            },
+            prism: {
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
+            },
+        }),
 };
 
 module.exports = config;
