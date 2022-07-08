@@ -27,12 +27,12 @@ type Options = {
   // format options
   format:
     | (
-        | 'camelCase'
-        | 'strictCamelCase'
-        | 'PascalCase'
-        | 'StrictPascalCase'
-        | 'snake_case'
-        | 'UPPER_CASE'
+        | "camelCase"
+        | "strictCamelCase"
+        | "PascalCase"
+        | "StrictPascalCase"
+        | "snake_case"
+        | "UPPER_CASE"
       )[]
     | null;
   custom?: {
@@ -40,19 +40,19 @@ type Options = {
     match: boolean;
   };
   leadingUnderscore?:
-    | 'forbid'
-    | 'require'
-    | 'requireDouble'
-    | 'allow'
-    | 'allowDouble'
-    | 'allowSingleOrDouble';
+    | "forbid"
+    | "require"
+    | "requireDouble"
+    | "allow"
+    | "allowDouble"
+    | "allowSingleOrDouble";
   trailingUnderscore?:
-    | 'forbid'
-    | 'require'
-    | 'requireDouble'
-    | 'allow'
-    | 'allowDouble'
-    | 'allowSingleOrDouble';
+    | "forbid"
+    | "require"
+    | "requireDouble"
+    | "allow"
+    | "allowDouble"
+    | "allowSingleOrDouble";
   prefix?: string[];
   suffix?: string[];
 
@@ -72,22 +72,22 @@ type Options = {
 // the default config is similar to ESLint's camelcase rule but more strict
 const defaultOptions: Options = [
   {
-    selector: 'default',
-    format: ['camelCase'],
-    leadingUnderscore: 'allow',
-    trailingUnderscore: 'allow',
+    selector: "default",
+    format: ["camelCase"],
+    leadingUnderscore: "allow",
+    trailingUnderscore: "allow",
   },
 
   {
-    selector: 'variable',
-    format: ['camelCase', 'UPPER_CASE'],
-    leadingUnderscore: 'allow',
-    trailingUnderscore: 'allow',
+    selector: "variable",
+    format: ["camelCase", "UPPER_CASE"],
+    leadingUnderscore: "allow",
+    trailingUnderscore: "allow",
   },
 
   {
-    selector: 'typeLike',
-    format: ['PascalCase'],
+    selector: "typeLike",
+    format: ["PascalCase"],
   },
 ];
 ```
@@ -314,10 +314,10 @@ For example, if you provide the following config:
 
 ```ts
 [
-  /* 1 */ { selector: 'default', format: ['camelCase'] },
-  /* 2 */ { selector: 'variable', format: ['snake_case'] },
-  /* 3 */ { selector: 'variable', types: ['boolean'], format: ['UPPER_CASE'] },
-  /* 4 */ { selector: 'variableLike', format: ['PascalCase'] },
+  /* 1 */ { selector: "default", format: ["camelCase"] },
+  /* 2 */ { selector: "variable", format: ["snake_case"] },
+  /* 3 */ { selector: "variable", types: ["boolean"], format: ["UPPER_CASE"] },
+  /* 4 */ { selector: "variableLike", format: ["PascalCase"] },
 ];
 ```
 

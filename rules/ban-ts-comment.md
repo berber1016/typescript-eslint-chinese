@@ -23,18 +23,18 @@ The configuration looks like this:
 
 ```ts
 interface Options {
-  'ts-expect-error'?: boolean | 'allow-with-description';
-  'ts-ignore'?: boolean | 'allow-with-description';
-  'ts-nocheck'?: boolean | 'allow-with-description';
-  'ts-check'?: boolean | 'allow-with-description';
+  "ts-expect-error"?: boolean | "allow-with-description";
+  "ts-ignore"?: boolean | "allow-with-description";
+  "ts-nocheck"?: boolean | "allow-with-description";
+  "ts-check"?: boolean | "allow-with-description";
   minimumDescriptionLength?: number;
 }
 
 const defaultOptions: Options = {
-  'ts-expect-error': 'allow-with-description',
-  'ts-ignore': true,
-  'ts-nocheck': true,
-  'ts-check': false,
+  "ts-expect-error": "allow-with-description",
+  "ts-ignore": true,
+  "ts-nocheck": true,
+  "ts-check": false,
   minimumDescriptionLength: 3,
 };
 ```
@@ -50,13 +50,13 @@ A value of `true` for a particular directive means that this rule will report if
 ```ts
 if (false) {
   // @ts-ignore: Unreachable code error
-  console.log('hello');
+  console.log("hello");
 }
 if (false) {
   /*
   @ts-ignore: Unreachable code error
   */
-  console.log('hello');
+  console.log("hello");
 }
 ```
 
@@ -65,7 +65,7 @@ if (false) {
 ```ts
 if (false) {
   // Compiler warns about unreachable code error
-  console.log('hello');
+  console.log("hello");
 }
 ```
 
@@ -82,11 +82,11 @@ For example, with `{ 'ts-expect-error': 'allow-with-description' }`:
 ```ts
 if (false) {
   // @ts-expect-error
-  console.log('hello');
+  console.log("hello");
 }
 if (false) {
   /* @ts-expect-error */
-  console.log('hello');
+  console.log("hello");
 }
 ```
 
@@ -95,13 +95,13 @@ if (false) {
 ```ts
 if (false) {
   // @ts-expect-error: Unreachable code error
-  console.log('hello');
+  console.log("hello");
 }
 if (false) {
   /*
   @ts-expect-error: Unreachable code error
   */
-  console.log('hello');
+  console.log("hello");
 }
 ```
 
@@ -118,7 +118,7 @@ For example, with `{ 'ts-expect-error': 'allow-with-description', minimumDescrip
 ```ts
 if (false) {
   // @ts-expect-error: TODO
-  console.log('hello');
+  console.log("hello");
 }
 ```
 
@@ -127,7 +127,7 @@ if (false) {
 ```ts
 if (false) {
   // @ts-expect-error The rationale for this override is described in issue #1337 on GitLab
-  console.log('hello');
+  console.log("hello");
 }
 ```
 

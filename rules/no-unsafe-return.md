@@ -66,13 +66,13 @@ function foo2() {
 }
 
 const foo3 = () => [];
-const foo4 = () => ['a'];
+const foo4 = () => ["a"];
 
 function assignability1(): Set<string> {
-  return new Set<string>(['foo']);
+  return new Set<string>(["foo"]);
 }
 type TAssign = () => Set<string>;
-const assignability2: TAssign = () => new Set(['foo']);
+const assignability2: TAssign = () => new Set(["foo"]);
 ```
 
 <!--/tabs-->

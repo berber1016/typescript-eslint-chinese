@@ -20,7 +20,7 @@ Examples of code for this rule:
 ```ts
 /*eslint @typescript-eslint/no-throw-literal: "error"*/
 
-throw 'error';
+throw "error";
 
 throw 0;
 
@@ -29,21 +29,21 @@ throw undefined;
 throw null;
 
 const err = new Error();
-throw 'an ' + err;
+throw "an " + err;
 
 const err = new Error();
 throw `${err}`;
 
-const err = '';
+const err = "";
 throw err;
 
 function err() {
-  return '';
+  return "";
 }
 throw err();
 
 const foo = {
-  bar: '',
+  bar: "",
 };
 throw foo.bar;
 ```

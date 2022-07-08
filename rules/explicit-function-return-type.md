@@ -27,7 +27,7 @@ var fn = function () {
 };
 
 // Should indicate that a string is returned
-var arrowFn = () => 'test';
+var arrowFn = () => "test";
 
 class Test {
   // Should indicate that no value is returned (void)
@@ -51,7 +51,7 @@ var fn = function (): number {
 };
 
 // A return value of type string
-var arrowFn = (): string => 'test';
+var arrowFn = (): string => "test";
 
 class Test {
   // No return value should be expected (void)
@@ -134,11 +134,11 @@ export default () => {};
 #### ✅ Correct
 
 ```ts
-node.addEventListener('click', () => {});
+node.addEventListener("click", () => {});
 
-node.addEventListener('click', function () {});
+node.addEventListener("click", function () {});
 
-const foo = arr.map(i => i * i);
+const foo = arr.map((i) => i * i);
 ```
 
 ### `allowTypedFunctionExpressions`
@@ -150,10 +150,10 @@ Examples of code for this rule with `{ allowTypedFunctionExpressions: true }`:
 #### ❌ Incorrect
 
 ```ts
-let arrowFn = () => 'test';
+let arrowFn = () => "test";
 
 let funcExpr = function () {
-  return 'test';
+  return "test";
 };
 
 let objectProp = {
@@ -234,14 +234,14 @@ Examples of code for this rule with `{ allowDirectConstAssertionInArrowFunctions
 #### ❌ Incorrect
 
 ```ts
-const func = (value: number) => ({ type: 'X', value } as any);
-const func = (value: number) => ({ type: 'X', value } as Action);
+const func = (value: number) => ({ type: "X", value } as any);
+const func = (value: number) => ({ type: "X", value } as Action);
 ```
 
 #### ✅ Correct
 
 ```ts
-const func = (value: number) => ({ foo: 'bar', value } as const);
+const func = (value: number) => ({ foo: "bar", value } as const);
 const func = () => x as const;
 ```
 

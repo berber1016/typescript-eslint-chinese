@@ -13,7 +13,7 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-const maybe = Math.random() > 0.5 ? '' : undefined;
+const maybe = Math.random() > 0.5 ? "" : undefined;
 
 const definitely = maybe as string;
 const alsoDefinitely = <string>maybe;
@@ -22,7 +22,7 @@ const alsoDefinitely = <string>maybe;
 ### ✅ Correct
 
 ```ts
-const maybe = Math.random() > 0.5 ? '' : undefined;
+const maybe = Math.random() > 0.5 ? "" : undefined;
 
 const definitely = maybe!;
 const alsoDefinitely = maybe!;

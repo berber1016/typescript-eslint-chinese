@@ -55,8 +55,8 @@ enum Color {
 
 ```ts
 enum Status {
-  Open = 'Open',
-  Close = 'Close',
+  Open = "Open",
+  Close = "Close",
 }
 
 enum Direction {
@@ -65,9 +65,9 @@ enum Direction {
 }
 
 enum Color {
-  Red = 'Red',
-  Green = 'Green',
-  Blue = 'Blue',
+  Red = "Red",
+  Green = "Green",
+  Blue = "Blue",
 }
 ```
 

@@ -29,13 +29,13 @@ class StaticConstants {
   static readonly version = 42;
 
   static isProduction() {
-    return process.env.NODE_ENV === 'production';
+    return process.env.NODE_ENV === "production";
   }
 }
 
 class HelloWorldLogger {
   constructor() {
-    console.log('Hello, world!');
+    console.log("Hello, world!");
   }
 }
 ```
@@ -46,11 +46,11 @@ class HelloWorldLogger {
 export const version = 42;
 
 export function isProduction() {
-  return process.env.NODE_ENV === 'production';
+  return process.env.NODE_ENV === "production";
 }
 
 function logHelloWorld() {
-  console.log('Hello, world!');
+  console.log("Hello, world!");
 }
 ```
 
@@ -115,12 +115,12 @@ However, namespace imports are impacted by these downsides:
 // utilities.ts
 export class Utilities {
   static sayHello() {
-    console.log('Hello, world!');
+    console.log("Hello, world!");
   }
 }
 
 // consumers.ts
-import { Utilities } from './utilities';
+import { Utilities } from "./utilities";
 
 Utilities.sayHello();
 ```
@@ -130,11 +130,11 @@ Utilities.sayHello();
 ```ts
 // utilities.ts
 export function sayHello() {
-  console.log('Hello, world!');
+  console.log("Hello, world!");
 }
 
 // consumers.ts
-import * as utilities from './utilities';
+import * as utilities from "./utilities";
 
 utilities.sayHello();
 ```
@@ -144,11 +144,11 @@ utilities.sayHello();
 ```ts
 // utilities.ts
 export function sayHello() {
-  console.log('Hello, world!');
+  console.log("Hello, world!");
 }
 
 // consumers.ts
-import { sayHello } from './utilities';
+import { sayHello } from "./utilities";
 
 sayHello();
 ```
@@ -234,7 +234,7 @@ class NoFields {}
 ```ts
 class NoFields {
   constructor() {
-    console.log('Hello, world!');
+    console.log("Hello, world!");
   }
 }
 ```
@@ -250,7 +250,7 @@ The `allowEmpty` option adds an exemption for classes that are entirely empty.
 ```ts
 class NoFields {
   constructor() {
-    console.log('Hello, world!');
+    console.log("Hello, world!");
   }
 }
 ```

@@ -37,7 +37,7 @@ declare namespace foo {}
 ### ✅ Correct
 
 ```ts
-declare module 'foo' {}
+declare module "foo" {}
 
 // anything inside a d.ts file
 ```
@@ -60,7 +60,7 @@ namespace foo {}
 #### ✅ Correct
 
 ```ts
-declare module 'foo' {}
+declare module "foo" {}
 declare module foo {}
 declare namespace foo {}
 
@@ -91,7 +91,7 @@ declare namespace foo {}
 #### ✅ Correct
 
 ```ts
-declare module 'foo' {}
+declare module "foo" {}
 ```
 
 ### `allowDefinitionFiles`
@@ -117,7 +117,7 @@ declare namespace foo {}
 #### ✅ Correct
 
 ```ts
-declare module 'foo' {}
+declare module "foo" {}
 
 // anything inside a d.ts file
 ```

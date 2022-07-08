@@ -3,6 +3,7 @@ id: monorepo
 title: Monorepo 配置
 sidebar_label: Monorepo Configuration
 ---
+
 如果你使用 monorepo，这篇文章将帮助你理解如何设置类型化的检测。
 如果你不想使用类型化检测，那么你可以停止阅读 - 你不需要做任何特殊的事情。
 
@@ -13,26 +14,26 @@ sidebar_label: Monorepo Configuration
 
 ## 在 `tsconfig.json` 每一个子项目中 (在根目录还有一个可选的)
 
-在我们之前的 [带类型信息的检测](./TYPED_LINTING.md)文章中, 我们给你展示了如何使用  `parserOptions.project`选项(参数) 来设置类型化的检测在配置中。这个选项接收一个相对路径的数组，允许你指定每一个`tsconfig.json`在你的 monorepo 中使用。 对于拥有太多项目包的人, 你还可以提供一个[glob path](https://github.com/isaacs/node-glob/blob/f5a57d3d6e19b324522a3fa5bdd5075fd1aa79d1/README.md#glob-primer).
+在我们之前的 [带类型信息的检测](./TYPED_LINTING.md)文章中, 我们给你展示了如何使用 `parserOptions.project`选项(参数) 来设置类型化的检测在配置中。这个选项接收一个相对路径的数组，允许你指定每一个`tsconfig.json`在你的 monorepo 中使用。 对于拥有太多项目包的人, 你还可以提供一个[glob path](https://github.com/isaacs/node-glob/blob/f5a57d3d6e19b324522a3fa5bdd5075fd1aa79d1/README.md#glob-primer).
 
 例如, this is how we specify all of our `tsconfig.json` within this repo.
 
 ```js title=".eslintrc.js"
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,
     // Remove this line
-    project: ['./tsconfig.json'],
+    project: ["./tsconfig.json"],
     // Add this line
-    project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json'],
+    project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ["@typescript-eslint"],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
   ],
 };
 ```

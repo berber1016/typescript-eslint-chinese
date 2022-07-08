@@ -99,33 +99,33 @@ The default options suggest using `Record<string, unknown>`; this was a stylisti
 ```ts
 const defaultTypes = {
   String: {
-    message: 'Use string instead',
-    fixWith: 'string',
+    message: "Use string instead",
+    fixWith: "string",
   },
   Boolean: {
-    message: 'Use boolean instead',
-    fixWith: 'boolean',
+    message: "Use boolean instead",
+    fixWith: "boolean",
   },
   Number: {
-    message: 'Use number instead',
-    fixWith: 'number',
+    message: "Use number instead",
+    fixWith: "number",
   },
   Symbol: {
-    message: 'Use symbol instead',
-    fixWith: 'symbol',
+    message: "Use symbol instead",
+    fixWith: "symbol",
   },
   BigInt: {
-    message: 'Use bigint instead',
-    fixWith: 'bigint',
+    message: "Use bigint instead",
+    fixWith: "bigint",
   },
 
   Function: {
     message: [
-      'The `Function` type accepts any function-like value.',
-      'It provides no type safety when calling the function, which can be a common source of bugs.',
-      'It also accepts things like class declarations, which will throw at runtime as they will not be called with `new`.',
-      'If you are expecting the function to accept certain arguments, you should explicitly define the function shape.',
-    ].join('\n'),
+      "The `Function` type accepts any function-like value.",
+      "It provides no type safety when calling the function, which can be a common source of bugs.",
+      "It also accepts things like class declarations, which will throw at runtime as they will not be called with `new`.",
+      "If you are expecting the function to accept certain arguments, you should explicitly define the function shape.",
+    ].join("\n"),
   },
 
   // object typing
@@ -134,14 +134,14 @@ const defaultTypes = {
       'The `Object` type actually means "any non-nullish value", so it is marginally better than `unknown`.',
       '- If you want a type meaning "any object", you probably want `Record<string, unknown>` instead.',
       '- If you want a type meaning "any value", you probably want `unknown` instead.',
-    ].join('\n'),
+    ].join("\n"),
   },
-  '{}': {
+  "{}": {
     message: [
       '`{}` actually means "any non-nullish value".',
       '- If you want a type meaning "any object", you probably want `Record<string, unknown>` instead.',
       '- If you want a type meaning "any value", you probably want `unknown` instead.',
-    ].join('\n'),
+    ].join("\n"),
   },
 };
 ```
@@ -158,10 +158,10 @@ Examples of code with the default options:
 
 ```ts
 // use lower-case primitives for consistency
-const str: String = 'foo';
+const str: String = "foo";
 const bool: Boolean = true;
 const num: Number = 1;
-const symb: Symbol = Symbol('foo');
+const symb: Symbol = Symbol("foo");
 const bigInt: BigInt = 1n;
 
 // use a proper function type
@@ -169,20 +169,20 @@ const func: Function = () => 1;
 
 // use safer object types
 const capitalObj1: Object = 1;
-const capitalObj2: Object = { a: 'string' };
+const capitalObj2: Object = { a: "string" };
 
 const curly1: {} = 1;
-const curly2: {} = { a: 'string' };
+const curly2: {} = { a: "string" };
 ```
 
 #### ✅ Correct
 
 ```ts
 // use lower-case primitives for consistency
-const str: string = 'foo';
+const str: string = "foo";
 const bool: boolean = true;
 const num: number = 1;
-const symb: symbol = Symbol('foo');
+const symb: symbol = Symbol("foo");
 const bigInt: bigint = 1n;
 
 // use a proper function type
@@ -192,10 +192,10 @@ const func: () => number = () => 1;
 const lowerObj: object = {};
 
 const capitalObj1: number = 1;
-const capitalObj2: { a: string } = { a: 'string' };
+const capitalObj2: { a: string } = { a: "string" };
 
 const curly1: number = 1;
-const curly2: Record<'a', string> = { a: 'string' };
+const curly2: Record<"a", string> = { a: "string" };
 ```
 
 ## Related To

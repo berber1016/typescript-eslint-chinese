@@ -13,12 +13,12 @@ This rule aims to standardize the use of type imports style across the codebase.
 
 ```ts
 type Options = {
-  prefer: 'type-imports' | 'no-type-imports';
+  prefer: "type-imports" | "no-type-imports";
   disallowTypeAnnotations: boolean;
 };
 
 const defaultOptions: Options = {
-  prefer: 'type-imports',
+  prefer: "type-imports",
   disallowTypeAnnotations: true,
 };
 ```
@@ -33,8 +33,8 @@ This option defines the expected import kind for type-only imports. Valid values
 Examples of **correct** code with `{prefer: 'type-imports'}`, and **incorrect** code with `{prefer: 'no-type-imports'}`.
 
 ```ts
-import type { Foo } from 'Foo';
-import type Bar from 'Bar';
+import type { Foo } from "Foo";
+import type Bar from "Bar";
 type T = Foo;
 const x: Bar = 1;
 ```
@@ -42,8 +42,8 @@ const x: Bar = 1;
 Examples of **incorrect** code with `{prefer: 'type-imports'}`, and **correct** code with `{prefer: 'no-type-imports'}`.
 
 ```ts
-import { Foo } from 'Foo';
-import Bar from 'Bar';
+import { Foo } from "Foo";
+import Bar from "Bar";
 type T = Foo;
 const x: Bar = 1;
 ```
@@ -56,8 +56,8 @@ Default is `true`.
 Examples of **incorrect** code with `{disallowTypeAnnotations: true}`.
 
 ```ts
-type T = import('Foo').Foo;
-const x: import('Bar') = 1;
+type T = import("Foo").Foo;
+const x: import("Bar") = 1;
 ```
 
 ## When Not To Use It

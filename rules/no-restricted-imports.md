@@ -50,21 +50,21 @@ Examples of code with the above config:
 #### ❌ Incorrect
 
 ```ts
-import foo from 'import-foo';
-export { Foo } from 'import-foo';
+import foo from "import-foo";
+export { Foo } from "import-foo";
 
-import baz from 'import-baz';
-export { Baz } from 'import-baz';
+import baz from "import-baz";
+export { Baz } from "import-baz";
 ```
 
 #### ✅ Correct
 
 ```ts
-import { foo } from 'other-module';
+import { foo } from "other-module";
 
-import type foo from 'import-foo';
-export type { Foo } from 'import-foo';
+import type foo from "import-foo";
+export type { Foo } from "import-foo";
 
-import type baz from 'import-baz';
-export type { Baz } from 'import-baz';
+import type baz from "import-baz";
+export type { Baz } from "import-baz";
 ```

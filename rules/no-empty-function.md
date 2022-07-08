@@ -26,10 +26,10 @@ This rule adds the following options:
 
 ```ts
 type AdditionalAllowOptionEntries =
-  | 'private-constructors'
-  | 'protected-constructors'
-  | 'decoratedFunctions'
-  | 'overrideMethods';
+  | "private-constructors"
+  | "protected-constructors"
+  | "decoratedFunctions"
+  | "overrideMethods";
 
 type AllowOptionEntries =
   | BaseNoEmptyFunctionAllowOptionEntries
@@ -85,7 +85,7 @@ Examples of correct code for the `{ "allow": ["overrideMethods"] }` option:
 ```ts
 abstract class Base {
   protected greet(): void {
-    console.log('Hello!');
+    console.log("Hello!");
   }
 }
 

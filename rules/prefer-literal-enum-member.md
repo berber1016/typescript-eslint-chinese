@@ -34,7 +34,7 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-const str = 'Test';
+const str = "Test";
 enum Invalid {
   A = str, // Variable assignment
   B = {}, // Object assignment
@@ -49,7 +49,7 @@ enum Invalid {
 ```ts
 enum Valid {
   A,
-  B = 'TestStr', // A regular string
+  B = "TestStr", // A regular string
   C = 4, // A number
   D = null,
   E = /some_regex/,

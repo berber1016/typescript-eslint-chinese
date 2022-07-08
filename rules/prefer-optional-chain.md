@@ -28,11 +28,11 @@ function myFunc(foo: T | null) {
 }
 
 function myFunc(foo: T | null) {
-  return foo?.['a']?.b?.c;
+  return foo?.["a"]?.b?.c;
 }
 // is roughly equivalent to
 function myFunc(foo: T | null) {
-  return foo && foo['a'] && foo['a'].b && foo['a'].b.c;
+  return foo && foo["a"] && foo["a"].b && foo["a"].b.c;
 }
 
 function myFunc(foo: T | null) {
@@ -77,7 +77,7 @@ foo &&
 
 ```ts
 foo?.a?.b?.c;
-foo?.['a']?.b?.c;
+foo?.["a"]?.b?.c;
 foo?.a?.b?.method?.();
 
 foo?.a?.b?.c?.d?.e;

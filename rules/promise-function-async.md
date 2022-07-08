@@ -20,20 +20,20 @@ Examples of code for this rule
 ### ❌ Incorrect
 
 ```ts
-const arrowFunctionReturnsPromise = () => Promise.resolve('value');
+const arrowFunctionReturnsPromise = () => Promise.resolve("value");
 
 function functionReturnsPromise() {
-  return Promise.resolve('value');
+  return Promise.resolve("value");
 }
 ```
 
 ### ✅ Correct
 
 ```ts
-const arrowFunctionReturnsPromise = async () => Promise.resolve('value');
+const arrowFunctionReturnsPromise = async () => Promise.resolve("value");
 
 async function functionReturnsPromise() {
-  return Promise.resolve('value');
+  return Promise.resolve("value");
 }
 ```
 

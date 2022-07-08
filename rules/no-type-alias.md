@@ -52,8 +52,8 @@ type Person = {
 
 type ImmutablePerson = Immutable<Person>;
 
-var person: ImmutablePerson = { name: 'John', age: 30 };
-person.name = 'Brad'; // error, readonly property
+var person: ImmutablePerson = { name: "John", age: 30 };
+person.name = "Brad"; // error, readonly property
 ```
 
 When aliasing, the type alias does not create a new type, it just creates a new name
@@ -108,9 +108,9 @@ Examples of **correct** code for the `{ "allowAliases": "always" }` options:
 
 ```ts
 // primitives
-type Foo = 'a';
+type Foo = "a";
 
-type Foo = 'a' | 'b';
+type Foo = "a" | "b";
 
 type Foo = string;
 
@@ -135,7 +135,7 @@ Examples of **incorrect** code for the `{ "allowAliases": "in-unions" }` option:
 
 ```ts
 // primitives
-type Foo = 'a';
+type Foo = "a";
 
 type Foo = string;
 
@@ -156,7 +156,7 @@ Examples of **correct** code for the `{ "allowAliases": "in-unions" }` option:
 
 ```ts
 // primitives
-type Foo = 'a' | 'b';
+type Foo = "a" | "b";
 
 type Foo = string | string[];
 
@@ -173,9 +173,9 @@ Examples of **incorrect** code for the `{ "allowAliases": "in-intersections" }` 
 
 ```ts
 // primitives
-type Foo = 'a';
+type Foo = "a";
 
-type Foo = 'a' | 'b';
+type Foo = "a" | "b";
 
 type Foo = string;
 
@@ -211,7 +211,7 @@ Examples of **incorrect** code for the `{ "allowAliases": "in-unions-and-interse
 
 ```ts
 // primitives
-type Foo = 'a';
+type Foo = "a";
 
 type Foo = string;
 
@@ -228,7 +228,7 @@ Examples of **correct** code for the `{ "allowAliases": "in-unions-and-intersect
 
 ```ts
 // primitives
-type Foo = 'a' | 'b';
+type Foo = "a" | "b";
 
 type Foo = string | string[];
 
@@ -597,7 +597,7 @@ type Foo = Readonly<Bar>;
 
 type Foo = Partial<Bar>;
 
-type Foo = Omit<Bar, 'a' | 'b'>;
+type Foo = Omit<Bar, "a" | "b">;
 ```
 
 ## When Not To Use It

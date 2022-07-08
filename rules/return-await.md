@@ -22,9 +22,9 @@ It expands upon the base rule to add support for optionally requiring `return aw
 ## Options
 
 ```ts
-type Options = 'in-try-catch' | 'always' | 'never';
+type Options = "in-try-catch" | "always" | "never";
 
-const defaultOptions: Options = 'in-try-catch';
+const defaultOptions: Options = "in-try-catch";
 ```
 
 ### `in-try-catch`
@@ -46,44 +46,44 @@ Examples of code with `in-try-catch`:
 ```ts
 async function invalidInTryCatch1() {
   try {
-    return Promise.resolve('try');
+    return Promise.resolve("try");
   } catch (e) {}
 }
 
 async function invalidInTryCatch2() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    return await Promise.resolve('catch');
+    return await Promise.resolve("catch");
   }
 }
 
 async function invalidInTryCatch3() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    return Promise.resolve('catch');
+    return Promise.resolve("catch");
   } finally {
-    console.log('cleanup');
+    console.log("cleanup");
   }
 }
 
 async function invalidInTryCatch4() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    throw new Error('error2');
+    throw new Error("error2");
   } finally {
-    return await Promise.resolve('finally');
+    return await Promise.resolve("finally");
   }
 }
 
 async function invalidInTryCatch5() {
-  return await Promise.resolve('try');
+  return await Promise.resolve("try");
 }
 
 async function invalidInTryCatch6() {
-  return await 'value';
+  return await "value";
 }
 ```
 
@@ -92,44 +92,44 @@ async function invalidInTryCatch6() {
 ```ts
 async function validInTryCatch1() {
   try {
-    return await Promise.resolve('try');
+    return await Promise.resolve("try");
   } catch (e) {}
 }
 
 async function validInTryCatch2() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    return Promise.resolve('catch');
+    return Promise.resolve("catch");
   }
 }
 
 async function validInTryCatch3() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    return await Promise.resolve('catch');
+    return await Promise.resolve("catch");
   } finally {
-    console.log('cleanup');
+    console.log("cleanup");
   }
 }
 
 async function validInTryCatch4() {
   try {
-    throw new Error('error');
+    throw new Error("error");
   } catch (e) {
-    throw new Error('error2');
+    throw new Error("error2");
   } finally {
-    return Promise.resolve('finally');
+    return Promise.resolve("finally");
   }
 }
 
 async function validInTryCatch5() {
-  return Promise.resolve('try');
+  return Promise.resolve("try");
 }
 
 async function validInTryCatch6() {
-  return 'value';
+  return "value";
 }
 ```
 
@@ -146,16 +146,16 @@ Examples of code with `always`:
 ```ts
 async function invalidAlways1() {
   try {
-    return Promise.resolve('try');
+    return Promise.resolve("try");
   } catch (e) {}
 }
 
 async function invalidAlways2() {
-  return Promise.resolve('try');
+  return Promise.resolve("try");
 }
 
 async function invalidAlways3() {
-  return await 'value';
+  return await "value";
 }
 ```
 
@@ -164,16 +164,16 @@ async function invalidAlways3() {
 ```ts
 async function validAlways1() {
   try {
-    return await Promise.resolve('try');
+    return await Promise.resolve("try");
   } catch (e) {}
 }
 
 async function validAlways2() {
-  return await Promise.resolve('try');
+  return await Promise.resolve("try");
 }
 
 async function validAlways3() {
-  return 'value';
+  return "value";
 }
 ```
 
@@ -190,16 +190,16 @@ Examples of code with `never`:
 ```ts
 async function invalidNever1() {
   try {
-    return await Promise.resolve('try');
+    return await Promise.resolve("try");
   } catch (e) {}
 }
 
 async function invalidNever2() {
-  return await Promise.resolve('try');
+  return await Promise.resolve("try");
 }
 
 async function invalidNever3() {
-  return await 'value';
+  return await "value";
 }
 ```
 
@@ -208,15 +208,15 @@ async function invalidNever3() {
 ```ts
 async function validNever1() {
   try {
-    return Promise.resolve('try');
+    return Promise.resolve("try");
   } catch (e) {}
 }
 
 async function validNever2() {
-  return Promise.resolve('try');
+  return Promise.resolve("try");
 }
 
 async function validNever3() {
-  return 'value';
+  return "value";
 }
 ```

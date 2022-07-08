@@ -14,18 +14,18 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-await 'value';
+await "value";
 
-const createValue = () => 'value';
+const createValue = () => "value";
 await createValue();
 ```
 
 ### ✅ Correct
 
 ```ts
-await Promise.resolve('value');
+await Promise.resolve("value");
 
-const createValue = async () => 'value';
+const createValue = async () => "value";
 await createValue();
 ```
 

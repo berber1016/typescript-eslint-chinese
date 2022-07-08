@@ -16,9 +16,9 @@ which properties.
 
 ```ts
 type AccessibilityLevel =
-  | 'explicit' // require an accessor (including public)
-  | 'no-public' // don't require public
-  | 'off'; // don't check
+  | "explicit" // require an accessor (including public)
+  | "no-public" // don't require public
+  | "off"; // don't check
 
 type Options = {
   accessibility?: AccessibilityLevel;
@@ -33,7 +33,7 @@ type Options = {
 };
 
 const defaultOptions: Options = {
-  accessibility: 'explicit',
+  accessibility: "explicit",
 };
 ```
 
@@ -326,13 +326,13 @@ e.g. `[ { ignoredMethodNames: ['specificMethod', 'whateverMethod'] } ]`
 ```ts
 class Animal {
   get specificMethod() {
-    console.log('No error because you specified this method on option');
+    console.log("No error because you specified this method on option");
   }
   get whateverMethod() {
-    console.log('No error because you specified this method on option');
+    console.log("No error because you specified this method on option");
   }
   public get otherMethod() {
-    console.log('This method comply with this rule');
+    console.log("This method comply with this rule");
   }
 }
 ```

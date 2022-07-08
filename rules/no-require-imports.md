@@ -13,22 +13,22 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-var lib = require('lib');
-let lib2 = require('lib2');
-var lib5 = require('lib5'),
-  lib6 = require('lib6');
-import lib8 = require('lib8');
+var lib = require("lib");
+let lib2 = require("lib2");
+var lib5 = require("lib5"),
+  lib6 = require("lib6");
+import lib8 = require("lib8");
 ```
 
 ### ✅ Correct
 
 ```ts
-import { l } from 'lib';
-var lib3 = load('not_an_import');
+import { l } from "lib";
+var lib3 = load("not_an_import");
 var lib4 = lib2.subImport;
 var lib7 = 700;
 import lib9 = lib2.anotherSubImport;
-import lib10 from 'lib10';
+import lib10 from "lib10";
 ```
 
 ## Options

@@ -13,8 +13,8 @@ Sorting union (`|`) and intersection (`&`) types can help:
 Sorting within each group is done using the following code:
 
 ```ts
-const collator = new Intl.Collator('en', {
-  sensitivity: 'base',
+const collator = new Intl.Collator("en", {
+  sensitivity: "base",
   numeric: true,
 });
 
@@ -45,10 +45,10 @@ type T4 =
   | { a: string }
   | (() => void)
   | (() => string)
-  | 'b'
-  | 'a'
-  | 'b'
-  | 'a'
+  | "b"
+  | "a"
+  | "b"
+  | "a"
   | readonly string[]
   | readonly number[]
   | string[]
@@ -77,10 +77,10 @@ type T4 =
   | string[]
   | readonly number[]
   | readonly string[]
-  | 'a'
-  | 'b'
-  | 'a'
-  | 'b'
+  | "a"
+  | "b"
+  | "a"
+  | "b"
   | (() => string)
   | (() => void)
   | { a: string }
@@ -99,18 +99,18 @@ type Options = {
   checkUnions?: boolean;
   // the ordering of the groups
   groupOrder?: (
-    | 'conditional'
-    | 'function'
-    | 'import'
-    | 'intersection'
-    | 'keyword'
-    | 'literal'
-    | 'named'
-    | 'object'
-    | 'operator'
-    | 'tuple'
-    | 'union'
-    | 'nullish'
+    | "conditional"
+    | "function"
+    | "import"
+    | "intersection"
+    | "keyword"
+    | "literal"
+    | "named"
+    | "object"
+    | "operator"
+    | "tuple"
+    | "union"
+    | "nullish"
   )[];
 };
 
@@ -118,18 +118,18 @@ const defaultOptions: Options = {
   checkIntersections: true,
   checkUnions: true,
   groupOrder: [
-    'named',
-    'keyword',
-    'operator',
-    'literal',
-    'function',
-    'import',
-    'conditional',
-    'object',
-    'tuple',
-    'intersection',
-    'union',
-    'nullish',
+    "named",
+    "keyword",
+    "operator",
+    "literal",
+    "function",
+    "import",
+    "conditional",
+    "object",
+    "tuple",
+    "intersection",
+    "union",
+    "nullish",
   ],
 };
 ```

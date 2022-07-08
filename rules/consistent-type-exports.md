@@ -23,7 +23,7 @@ interface ButtonProps {
 }
 class Button implements ButtonProps {
   onClick() {
-    console.log('button!');
+    console.log("button!");
   }
 }
 export { Button, ButtonProps };
@@ -37,7 +37,7 @@ interface ButtonProps {
 }
 class Button implements ButtonProps {
   onClick() {
-    console.log('button!');
+    console.log("button!");
   }
 }
 export { Button };
@@ -94,14 +94,14 @@ export { x };
 ### ❌ Incorrect
 
 ```ts
-export { Button } from 'some-library';
-export type { ButtonProps } from 'some-library';
+export { Button } from "some-library";
+export type { ButtonProps } from "some-library";
 ```
 
 ### ✅ Correct
 
 ```ts
-export { Button, type ButtonProps } from 'some-library';
+export { Button, type ButtonProps } from "some-library";
 ```
 
 ## When Not To Use It

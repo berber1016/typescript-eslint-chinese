@@ -51,7 +51,7 @@ class X {
 }
 
 const x = new X();
-x['priv_prop'] = 123;
+x["priv_prop"] = 123;
 ```
 
 ### `allowProtectedClassPropertyAccess`
@@ -64,7 +64,7 @@ class X {
 }
 
 const x = new X();
-x['protected_prop'] = 123;
+x["protected_prop"] = 123;
 ```
 
 ### `allowIndexSignaturePropertyAccess`
@@ -77,7 +77,7 @@ class X {
 }
 
 const x = new X();
-x['hello'] = 123;
+x["hello"] = 123;
 ```
 
 If the TypeScript compiler option `noPropertyAccessFromIndexSignature` is set to `true`, then the above code is always allowed, even if `allowIndexSignaturePropertyAccess` is `false`.

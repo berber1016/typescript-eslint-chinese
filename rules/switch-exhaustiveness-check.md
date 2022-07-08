@@ -14,19 +14,19 @@ Examples of code for this rule:
 
 ```ts
 type Day =
-  | 'Monday'
-  | 'Tuesday'
-  | 'Wednesday'
-  | 'Thursday'
-  | 'Friday'
-  | 'Saturday'
-  | 'Sunday';
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
 
-const day = 'Monday' as Day;
+const day = "Monday" as Day;
 let result = 0;
 
 switch (day) {
-  case 'Monday': {
+  case "Monday": {
     result = 1;
     break;
   }
@@ -37,43 +37,43 @@ switch (day) {
 
 ```ts
 type Day =
-  | 'Monday'
-  | 'Tuesday'
-  | 'Wednesday'
-  | 'Thursday'
-  | 'Friday'
-  | 'Saturday'
-  | 'Sunday';
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
 
-const day = 'Monday' as Day;
+const day = "Monday" as Day;
 let result = 0;
 
 switch (day) {
-  case 'Monday': {
+  case "Monday": {
     result = 1;
     break;
   }
-  case 'Tuesday': {
+  case "Tuesday": {
     result = 2;
     break;
   }
-  case 'Wednesday': {
+  case "Wednesday": {
     result = 3;
     break;
   }
-  case 'Thursday': {
+  case "Thursday": {
     result = 4;
     break;
   }
-  case 'Friday': {
+  case "Friday": {
     result = 5;
     break;
   }
-  case 'Saturday': {
+  case "Saturday": {
     result = 6;
     break;
   }
-  case 'Sunday': {
+  case "Sunday": {
     result = 7;
     break;
   }
@@ -84,19 +84,19 @@ switch (day) {
 
 ```ts
 type Day =
-  | 'Monday'
-  | 'Tuesday'
-  | 'Wednesday'
-  | 'Thursday'
-  | 'Friday'
-  | 'Saturday'
-  | 'Sunday';
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
 
-const day = 'Monday' as Day;
+const day = "Monday" as Day;
 let result = 0;
 
 switch (day) {
-  case 'Monday': {
+  case "Monday": {
     result = 1;
     break;
   }

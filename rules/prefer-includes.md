@@ -38,7 +38,7 @@ str.indexOf(value) !== -1;
 array.indexOf(value) !== -1;
 readonlyArray.indexOf(value) === -1;
 typedArray.indexOf(value) > -1;
-maybe?.indexOf('') !== -1;
+maybe?.indexOf("") !== -1;
 userDefined.indexOf(value) >= 0;
 
 // simple RegExp test

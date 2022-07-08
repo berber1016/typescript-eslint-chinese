@@ -27,7 +27,7 @@ sidebar_label: Troubleshooting & FAQs
 [The contributing guide outlines the best way to raise an issue](https://github.com/typescript-eslint/typescript-eslint/blob/main/CONTRIBUTING.md#raising-issues).
 
 > 我们每周都会发布一个新的版本。
-> **在提交 issue 前**，请确保你已经检查了我们最新版本的[拓展(extension)规则列表](https://typescript-eslint.io/rules/#extension-rules) 
+> **在提交 issue 前**，请确保你已经检查了我们最新版本的[拓展(extension)规则列表](https://typescript-eslint.io/rules/#extension-rules)
 
 ## 我得到一个 error，它告诉我 "The file must be included in at least one of the projects provided"
 
@@ -46,14 +46,14 @@ sidebar_label: Troubleshooting & FAQs
 module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+    project: ["./tsconfig.json"],
     // Add this line
-    extraFileExtensions: ['.vue'],
+    extraFileExtensions: [".vue"],
   },
 };
 ```
 
-## 我的一个 lint 规则在纯 JavaScript 文件上不能正常工作。 
+## 我的一个 lint 规则在纯 JavaScript 文件上不能正常工作。
 
 This is to be expected - ESLint rules do not check file extensions on purpose, as it causes issues in environments that use non-standard extensions (for example, a `.vue` and a `.md` file can both contain TypeScript code to be linted).
 
@@ -129,9 +129,9 @@ module.exports = {
   // ... the rest of your config ...
   overrides: [
     {
-      files: ['*.ts', '*.mts', '*.cts', '*.tsx'],
+      files: ["*.ts", "*.mts", "*.cts", "*.tsx"],
       rules: {
-        'no-undef': 'off',
+        "no-undef": "off",
       },
     },
   ],

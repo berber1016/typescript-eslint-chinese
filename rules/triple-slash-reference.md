@@ -18,12 +18,12 @@ Examples of **incorrect** code for the `{ "types": "prefer-import" }` option. No
 
 ```ts
 /// <reference types="foo" />
-import * as foo from 'foo';
+import * as foo from "foo";
 ```
 
 ```ts
 /// <reference types="foo" />
-import foo = require('foo');
+import foo = require("foo");
 ```
 
 With `{ "path": "always", "types": "always", "lib": "always" }` options set, the following will all be **correct** usage:
@@ -37,26 +37,26 @@ With `{ "path": "always", "types": "always", "lib": "always" }` options set, the
 Examples of **correct** code for the `{ "types": "prefer-import" }` option:
 
 ```ts
-import * as foo from 'foo';
+import * as foo from "foo";
 ```
 
 ```ts
-import foo = require('foo');
+import foo = require("foo");
 ```
 
 ## Options
 
 ```ts
 type Options = {
-  lib?: 'always' | 'never';
-  path?: 'always' | 'never';
-  types?: 'always' | 'never' | 'prefer-import';
+  lib?: "always" | "never";
+  path?: "always" | "never";
+  types?: "always" | "never" | "prefer-import";
 };
 
 const defaultOptions: Options = {
-  lib: 'always',
-  path: 'never',
-  types: 'prefer-import',
+  lib: "always",
+  path: "never",
+  types: "prefer-import",
 };
 ```
 

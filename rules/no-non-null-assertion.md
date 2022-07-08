@@ -18,7 +18,7 @@ interface Foo {
 }
 
 const foo: Foo = getFoo();
-const includesBaz: boolean = foo.bar!.includes('baz');
+const includesBaz: boolean = foo.bar!.includes("baz");
 ```
 
 ### ✅ Correct
@@ -29,7 +29,7 @@ interface Foo {
 }
 
 const foo: Foo = getFoo();
-const includesBaz: boolean = foo.bar?.includes('baz') ?? false;
+const includesBaz: boolean = foo.bar?.includes("baz") ?? false;
 ```
 
 ## Options

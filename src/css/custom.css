@@ -1,18 +1,18 @@
 html:root {
-    --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 95%;
 }
 
-.theme-doc-sidebar-item-link-level-1>a,
-.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>a {
-    font-size: 1em;
+.theme-doc-sidebar-item-link-level-1 > a,
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > a {
+  font-size: 1em;
 }
 
-.theme-doc-sidebar-item-link-level-2>a,
-.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible>a {
-    font-size: 0.9em;
+.theme-doc-sidebar-item-link-level-2 > a,
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > a {
+  font-size: 0.9em;
 }
 
-.theme-doc-sidebar-item-link-level-3>a,
-.theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>a {
-    font-size: 0.8em;
+.theme-doc-sidebar-item-link-level-3 > a,
+.theme-doc-sidebar-item-category-level-3 > .menu__list-item-collapsible > a {
+  font-size: 0.8em;
 }

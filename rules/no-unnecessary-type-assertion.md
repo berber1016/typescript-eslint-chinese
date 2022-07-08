@@ -50,7 +50,7 @@ const foo = 3 as number;
 ```
 
 ```ts
-const foo = 'foo' as const;
+const foo = "foo" as const;
 ```
 
 ```ts

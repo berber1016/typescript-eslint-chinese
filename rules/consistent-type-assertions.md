@@ -17,16 +17,16 @@ In addition to ensuring that type assertions are written in a consistent way, th
 ```ts
 type Options =
   | {
-      assertionStyle: 'as' | 'angle-bracket';
-      objectLiteralTypeAssertions: 'allow' | 'allow-as-parameter' | 'never';
+      assertionStyle: "as" | "angle-bracket";
+      objectLiteralTypeAssertions: "allow" | "allow-as-parameter" | "never";
     }
   | {
-      assertionStyle: 'never';
+      assertionStyle: "never";
     };
 
 const defaultOptions: Options = {
-  assertionStyle: 'as',
-  objectLiteralTypeAssertions: 'allow',
+  assertionStyle: "as",
+  objectLiteralTypeAssertions: "allow",
 };
 ```
 

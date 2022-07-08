@@ -23,7 +23,7 @@ anyVar();
 anyVar.a.b();
 
 nestedAny.prop();
-nestedAny.prop['a']();
+nestedAny.prop["a"]();
 
 new anyVar();
 new nestedAny.prop();

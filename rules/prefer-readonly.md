@@ -24,7 +24,7 @@ class Container {
   public constructor(
     onlyModifiedInConstructor: number,
     // Private parameter properties can also be marked as readonly
-    private neverModifiedParameter: string,
+    private neverModifiedParameter: string
   ) {
     this.onlyModifiedInConstructor = onlyModifiedInConstructor;
   }
@@ -42,10 +42,10 @@ class Container {
   protected protectedMember: number;
 
   // This is modified later on by the class
-  private modifiedLater = 'unchanged';
+  private modifiedLater = "unchanged";
 
   public mutate() {
-    this.modifiedLater = 'mutated';
+    this.modifiedLater = "mutated";
   }
 }
 ```
@@ -82,7 +82,7 @@ class Container {
 
 ```ts
 class Container {
-  private neverModifiedPrivate = 'unchanged';
+  private neverModifiedPrivate = "unchanged";
 }
 ```
 

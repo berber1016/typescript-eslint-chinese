@@ -15,7 +15,7 @@ class Animal {
 
 class Cat extends Animal {
   meow(): Cat {
-    console.log('Meow~');
+    console.log("Meow~");
     return this;
   }
 }
@@ -35,7 +35,7 @@ class Animal {
 
 class Cat extends Animal {
   meow(): this {
-    console.log('Meow~');
+    console.log("Meow~");
     return this;
   }
 }

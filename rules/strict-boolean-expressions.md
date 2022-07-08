@@ -27,13 +27,13 @@ Examples of code for this rule:
 // nullable numbers are considered unsafe by default
 let num: number | undefined = 0;
 if (num) {
-  console.log('num is defined');
+  console.log("num is defined");
 }
 
 // nullable strings are considered unsafe by default
 let str: string | null = null;
 if (!str) {
-  console.log('str is empty');
+  console.log("str is empty");
 }
 
 // nullable booleans are considered unsafe by default
@@ -58,19 +58,19 @@ while (obj) {
 ```tsx
 // Using logical operator short-circuiting is allowed
 const Component = () => {
-  const entry = map.get('foo') || {};
+  const entry = map.get("foo") || {};
   return entry && <p>Name: {entry.name}</p>;
 };
 
 // nullable values should be checked explicitly against null or undefined
 let num: number | undefined = 0;
 if (num != null) {
-  console.log('num is defined');
+  console.log("num is defined");
 }
 
 let str: string | null = null;
 if (str != null && !str) {
-  console.log('str is empty');
+  console.log("str is empty");
 }
 
 function foo(bool?: boolean) {

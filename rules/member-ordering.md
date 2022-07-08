@@ -19,11 +19,11 @@ interface Options {
   typeLiterals?: OrderConfig;
 }
 
-type OrderConfig = MemberType[] | SortedOrderConfig | 'never';
+type OrderConfig = MemberType[] | SortedOrderConfig | "never";
 
 interface SortedOrderConfig {
-  memberTypes?: MemberType[] | 'never';
-  order: 'alphabetically' | 'alphabetically-case-insensitive' | 'as-written';
+  memberTypes?: MemberType[] | "never";
+  order: "alphabetically" | "alphabetically-case-insensitive" | "as-written";
 }
 
 // See below for the more specific MemberType strings

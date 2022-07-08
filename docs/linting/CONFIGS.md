@@ -31,7 +31,7 @@ title: 配置项
 
 ### `recommended`
 
-Recommended rules for code correctness that you can drop in without additional configuration.这些规则几乎总是针对糟糕的实践和/或像是bug的规则报告。`recommended` 还禁用已知的与此存储库相冲突(就像`eslint-recommended`中说的那样)或者在 TypeScript 代码库中出现问题的规则。
+Recommended rules for code correctness that you can drop in without additional configuration.这些规则几乎总是针对糟糕的实践和/或像是 bug 的规则报告。`recommended` 还禁用已知的与此存储库相冲突(就像`eslint-recommended`中说的那样)或者在 TypeScript 代码库中出现问题的规则。
 
 ```json
 {
@@ -66,7 +66,8 @@ Recommended rules for code correctness that you can drop in without additional c
 
 ### `strict`
 
-额外的严格(strict)规则也可以捕获bug，但比推荐(recommended)规则更加 "opinionated"。
+额外的严格(strict)规则也可以捕获 bug，但比推荐(recommended)规则更加 "opinionated"。
+
 ```json
 {
   "extends": [
@@ -78,7 +79,7 @@ Recommended rules for code correctness that you can drop in without additional c
 ```
 
 :::tip
-只有相当多的开发人员十分精通 TypeScript时，我们才会推荐一个 TypeScript 项目拓展这个配置。
+只有相当多的开发人员十分精通 TypeScript 时，我们才会推荐一个 TypeScript 项目拓展这个配置。
 :::
 
 ## 最重要的配置
@@ -89,4 +90,4 @@ ESLint 允许你在任何拓展配置上配置自己的规则设置。
 
 ### 建议更改配置
 
-如果你强烈认为一个特定的规则应该(或不应该)在这个配置中，请随意[发起一个issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) 并附上一个**详细的**理由来解释你的理论。
+如果你强烈认为一个特定的规则应该(或不应该)在这个配置中，请随意[发起一个 issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) 并附上一个**详细的**理由来解释你的理论。

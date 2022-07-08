@@ -30,7 +30,7 @@ const str: string = 1;
  * Explaining comment
  *
  * @ts-ignore */
-const multiLine: number = 'value';
+const multiLine: number = "value";
 
 /** @ts-ignore */
 const block: string = 1;
@@ -51,7 +51,7 @@ const str: string = 1;
  * Explaining comment
  *
  * @ts-expect-error */
-const multiLine: number = 'value';
+const multiLine: number = "value";
 
 /** @ts-expect-error */
 const block: string = 1;

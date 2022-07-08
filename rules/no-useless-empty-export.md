@@ -19,23 +19,23 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-export const value = 'Hello, world!';
+export const value = "Hello, world!";
 export {};
 ```
 
 ```ts
-import 'some-other-module';
+import "some-other-module";
 export {};
 ```
 
 ### ✅ Correct
 
 ```ts
-export const value = 'Hello, world!';
+export const value = "Hello, world!";
 ```
 
 ```ts
-import 'some-other-module';
+import "some-other-module";
 ```
 
 ## Options

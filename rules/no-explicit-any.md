@@ -18,15 +18,15 @@ an `any` type from being implied by the compiler, but doesn't prevent
 ### ❌ Incorrect
 
 ```ts
-const age: any = 'seventeen';
+const age: any = "seventeen";
 ```
 
 ```ts
-const ages: any[] = ['seventeen'];
+const ages: any[] = ["seventeen"];
 ```
 
 ```ts
-const ages: Array<any> = ['seventeen'];
+const ages: Array<any> = ["seventeen"];
 ```
 
 ```ts

@@ -8,7 +8,7 @@ It also add support for enum members
 
 ```ts
 enum MyEnum {
-  KEY = 'value',
+  KEY = "value",
 }
 ```
 

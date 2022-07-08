@@ -21,13 +21,13 @@ declare const nestedAny: { prop: any };
 
 anyVar.a;
 anyVar.a.b;
-anyVar['a'];
-anyVar['a']['b'];
+anyVar["a"];
+anyVar["a"]["b"];
 
 nestedAny.prop.a;
-nestedAny.prop['a'];
+nestedAny.prop["a"];
 
-const key = 'a';
+const key = "a";
 nestedAny.prop[key];
 
 // Using an any to access a member is unsafe
@@ -42,9 +42,9 @@ nestedAny[anyVar];
 declare const properlyTyped: { prop: { a: string } };
 
 properlyTyped.prop.a;
-properlyTyped.prop['a'];
+properlyTyped.prop["a"];
 
-const key = 'a';
+const key = "a";
 properlyTyped.prop[key];
 
 const arr = [1, 2, 3];

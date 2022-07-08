@@ -11,14 +11,14 @@ This rule aims to standardize usage of array types within your codebase.
 ## Options
 
 ```ts
-type ArrayOption = 'array' | 'generic' | 'array-simple';
+type ArrayOption = "array" | "generic" | "array-simple";
 type Options = {
   default: ArrayOption;
   readonly?: ArrayOption;
 };
 
 const defaultOptions: Options = {
-  default: 'array',
+  default: "array",
 };
 ```
 
@@ -40,15 +40,15 @@ Always use `T[]` or `readonly T[]` for all array types.
 #### ❌ Incorrect
 
 ```ts
-const x: Array<string> = ['a', 'b'];
-const y: ReadonlyArray<string> = ['a', 'b'];
+const x: Array<string> = ["a", "b"];
+const y: ReadonlyArray<string> = ["a", "b"];
 ```
 
 #### ✅ Correct
 
 ```ts
-const x: string[] = ['a', 'b'];
-const y: readonly string[] = ['a', 'b'];
+const x: string[] = ["a", "b"];
+const y: readonly string[] = ["a", "b"];
 ```
 
 ### `"generic"`
@@ -60,15 +60,15 @@ Always use `Array<T>` or `ReadonlyArray<T>` for all array types.
 #### ❌ Incorrect
 
 ```ts
-const x: string[] = ['a', 'b'];
-const y: readonly string[] = ['a', 'b'];
+const x: string[] = ["a", "b"];
+const y: readonly string[] = ["a", "b"];
 ```
 
 #### ✅ Correct
 
 ```ts
-const x: Array<string> = ['a', 'b'];
-const y: ReadonlyArray<string> = ['a', 'b'];
+const x: Array<string> = ["a", "b"];
+const y: ReadonlyArray<string> = ["a", "b"];
 ```
 
 ### `"array-simple"`
@@ -81,23 +81,23 @@ Use `Array<T>` or `ReadonlyArray<T>` for all other types (union types, intersect
 #### ❌ Incorrect
 
 ```ts
-const a: (string | number)[] = ['a', 'b'];
-const b: { prop: string }[] = [{ prop: 'a' }];
+const a: (string | number)[] = ["a", "b"];
+const b: { prop: string }[] = [{ prop: "a" }];
 const c: (() => void)[] = [() => {}];
-const d: Array<MyType> = ['a', 'b'];
-const e: Array<string> = ['a', 'b'];
-const f: ReadonlyArray<string> = ['a', 'b'];
+const d: Array<MyType> = ["a", "b"];
+const e: Array<string> = ["a", "b"];
+const f: ReadonlyArray<string> = ["a", "b"];
 ```
 
 #### ✅ Correct
 
 ```ts
-const a: Array<string | number> = ['a', 'b'];
-const b: Array<{ prop: string }> = [{ prop: 'a' }];
+const a: Array<string | number> = ["a", "b"];
+const b: Array<{ prop: string }> = [{ prop: "a" }];
 const c: Array<() => void> = [() => {}];
-const d: MyType[] = ['a', 'b'];
-const e: string[] = ['a', 'b'];
-const f: readonly string[] = ['a', 'b'];
+const d: MyType[] = ["a", "b"];
+const e: string[] = ["a", "b"];
+const f: readonly string[] = ["a", "b"];
 ```
 
 ## Combination Matrix

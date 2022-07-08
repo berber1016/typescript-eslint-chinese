@@ -28,12 +28,12 @@ Examples of code for this rule:
 ```ts
 [1, 2, 3].reduce((arr, num) => arr.concat(num * 2), [] as number[]);
 
-['a', 'b'].reduce(
+["a", "b"].reduce(
   (accum, name) => ({
     ...accum,
     [name]: true,
   }),
-  {} as Record<string, boolean>,
+  {} as Record<string, boolean>
 );
 ```
 
@@ -42,12 +42,12 @@ Examples of code for this rule:
 ```ts
 [1, 2, 3].reduce<number[]>((arr, num) => arr.concat(num * 2), []);
 
-['a', 'b'].reduce<Record<string, boolean>>(
+["a", "b"].reduce<Record<string, boolean>>(
   (accum, name) => ({
     ...accum,
     [name]: true,
   }),
-  {},
+  {}
 );
 ```
 

@@ -173,7 +173,7 @@ Examples of **correct** code for this rule with `{checkParameterProperties: fals
 class Foo {
   constructor(
     private paramProp1: string[],
-    private paramProp2: readonly string[],
+    private paramProp2: readonly string[]
   ) {}
 }
 ```
@@ -189,7 +189,7 @@ Examples of code for this rule with `{ignoreInferredTypes: true}`:
 #### ❌ Incorrect
 
 ```ts
-import { acceptsCallback, CallbackOptions } from 'external-dependency';
+import { acceptsCallback, CallbackOptions } from "external-dependency";
 
 acceptsCallback((options: CallbackOptions) => {});
 ```
@@ -212,9 +212,9 @@ export const acceptsCallback: AcceptsCallback;
 #### ✅ Correct
 
 ```ts
-import { acceptsCallback } from 'external-dependency';
+import { acceptsCallback } from "external-dependency";
 
-acceptsCallback(options => {});
+acceptsCallback((options) => {});
 ```
 
 <details>

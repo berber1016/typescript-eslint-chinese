@@ -21,11 +21,11 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-'something'.match(/thing/);
+"something".match(/thing/);
 
-'some things are just things'.match(/thing/);
+"some things are just things".match(/thing/);
 
-const text = 'something';
+const text = "something";
 const search = /thing/;
 text.match(search);
 ```
@@ -33,11 +33,11 @@ text.match(search);
 ### ✅ Correct
 
 ```ts
-/thing/.exec('something');
+/thing/.exec("something");
 
-'some things are just things'.match(/thing/g);
+"some things are just things".match(/thing/g);
 
-const text = 'something';
+const text = "something";
 const search = /thing/;
 search.exec(text);
 ```

@@ -11,14 +11,14 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-var foo = '5.5' + 5;
+var foo = "5.5" + 5;
 var foo = 1n + 1;
 ```
 
 ### ✅ Correct
 
 ```ts
-var foo = parseInt('5.5', 10) + 10;
+var foo = parseInt("5.5", 10) + 10;
 var foo = 1n + 1n;
 ```
 
@@ -52,9 +52,9 @@ Examples of code for this rule with `{ checkCompoundAssignments: true }`:
 /*eslint @typescript-eslint/restrict-plus-operands: ["error", { "checkCompoundAssignments": true }]*/
 
 let foo: string | undefined;
-foo += 'some data';
+foo += "some data";
 
-let bar: string = '';
+let bar: string = "";
 bar += 0;
 ```
 
@@ -66,8 +66,8 @@ bar += 0;
 let foo: number = 0;
 foo += 1;
 
-let bar = '';
-bar += 'test';
+let bar = "";
+bar += "test";
 ```
 
 ### `allowAny`

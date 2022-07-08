@@ -11,10 +11,10 @@ class ContainsText {
   delayedText: string;
 
   // `typedef` requires a type annotation here to maintain consistency
-  immediateTextExplicit: string = 'text';
+  immediateTextExplicit: string = "text";
 
   // This is still a string type because of its initial value
-  immediateTextImplicit = 'text';
+  immediateTextImplicit = "text";
 }
 ```
 
@@ -95,9 +95,9 @@ const [b, c] = [1, 2];
 ```ts
 const [a]: number[] = [1];
 const [b]: [number] = [2];
-const [c, d]: [boolean, string] = [true, 'text'];
+const [c, d]: [boolean, string] = [true, "text"];
 
-for (const [key, val] of new Map([['key', 1]])) {
+for (const [key, val] of new Map([["key", 1]])) {
 }
 ```
 
@@ -112,12 +112,12 @@ Examples of code with `{ "arrowParameter": true }`:
 #### ❌ Incorrect
 
 ```ts
-const logsSize = size => console.log(size);
+const logsSize = (size) => console.log(size);
 
-['hello', 'world'].map(text => text.length);
+["hello", "world"].map((text) => text.length);
 
 const mapper = {
-  map: text => text + '...',
+  map: (text) => text + "...",
 };
 ```
 
@@ -126,10 +126,10 @@ const mapper = {
 ```ts
 const logsSize = (size: number) => console.log(size);
 
-['hello', 'world'].map((text: string) => text.length);
+["hello", "world"].map((text: string) => text.length);
 
 const mapper = {
-  map: (text: string) => text + '...',
+  map: (text: string) => text + "...",
 };
 ```
 
@@ -146,7 +146,7 @@ Examples of code with `{ "memberVariableDeclaration": true }`:
 ```ts
 class ContainsText {
   delayedText;
-  immediateTextImplicit = 'text';
+  immediateTextImplicit = "text";
 }
 ```
 
@@ -155,7 +155,7 @@ class ContainsText {
 ```ts
 class ContainsText {
   delayedText: string;
-  immediateTextImplicit: string = 'text';
+  immediateTextImplicit: string = "text";
 }
 ```
 
@@ -170,17 +170,17 @@ Examples of code with `{ "objectDestructuring": true }`:
 #### ❌ Incorrect
 
 ```ts
-const { length } = 'text';
+const { length } = "text";
 const [b, c] = Math.random() ? [1, 2] : [3, 4];
 ```
 
 #### ✅ Correct
 
 ```ts
-const { length }: { length: number } = 'text';
+const { length }: { length: number } = "text";
 const [b, c]: [number, number] = Math.random() ? [1, 2] : [3, 4];
 
-for (const { key, val } of [{ key: 'key', val: 1 }]) {
+for (const { key, val } of [{ key: "key", val: 1 }]) {
 }
 ```
 
@@ -214,7 +214,7 @@ const divider = {
 
 class Logger {
   log(text): boolean {
-    console.log('>', text);
+    console.log(">", text);
     return true;
   }
 }
@@ -242,7 +242,7 @@ const divider = {
 
 class Logger {
   log(text: boolean): boolean {
-    console.log('>', text);
+    console.log(">", text);
     return true;
   }
 }
@@ -285,16 +285,16 @@ Examples of code with `{ "variableDeclaration": true }`:
 #### ❌ Incorrect
 
 ```ts
-const text = 'text';
-let initialText = 'text';
+const text = "text";
+let initialText = "text";
 let delayedText;
 ```
 
 #### ✅ Correct
 
 ```ts
-const text: string = 'text';
-let initialText: string = 'text';
+const text: string = "text";
+let initialText: string = "text";
 let delayedText: string;
 ```
 
@@ -309,7 +309,7 @@ Examples of code with `{ "variableDeclaration": true, "variableDeclarationIgnore
 #### ❌ Incorrect
 
 ```ts
-const text = 'text';
+const text = "text";
 ```
 
 #### ✅ Correct

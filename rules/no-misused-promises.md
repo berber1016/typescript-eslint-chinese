@@ -25,7 +25,7 @@ type Options = [
     checksConditionals?: boolean;
     checksVoidReturn?: boolean | ChecksVoidReturnOptions;
     checksSpreads?: boolean;
-  },
+  }
 ];
 
 interface ChecksVoidReturnOptions {
@@ -127,7 +127,7 @@ Examples of code for this rule with `checksConditionals: true`:
 #### ❌ Incorrect
 
 ```ts
-const promise = Promise.resolve('value');
+const promise = Promise.resolve("value");
 
 if (promise) {
   // Do something
@@ -143,7 +143,7 @@ while (promise) {
 #### ✅ Correct
 
 ```ts
-const promise = Promise.resolve('value');
+const promise = Promise.resolve("value");
 
 // Always `await` the Promise in a conditional
 if (await promise) {
@@ -168,7 +168,7 @@ Examples of code for this rule with `checksVoidReturn: true`:
 #### ❌ Incorrect
 
 ```ts
-[1, 2, 3].forEach(async value => {
+[1, 2, 3].forEach(async (value) => {
   await doSomething(value);
 });
 
@@ -178,7 +178,7 @@ new Promise(async (resolve, reject) => {
 });
 
 const eventEmitter = new EventEmitter();
-eventEmitter.on('some-event', async () => {
+eventEmitter.on("some-event", async () => {
   synchronousCall();
   await doSomething();
   otherSynchronousCall();
@@ -195,9 +195,9 @@ for (const value of [1, 2, 3]) {
 
 // If outer context is not `async`, handle error explicitly
 Promise.all(
-  [1, 2, 3].map(async value => {
+  [1, 2, 3].map(async (value) => {
     await doSomething(value);
-  }),
+  })
 ).catch(handleError);
 
 // Use an async IIFE wrapper
@@ -211,7 +211,7 @@ new Promise((resolve, reject) => {
 
 // Name the async wrapper to call it later
 const eventEmitter = new EventEmitter();
-eventEmitter.on('some-event', () => {
+eventEmitter.on("some-event", () => {
   const handler = async () => {
     await doSomething();
     otherSynchronousCall();
@@ -238,12 +238,12 @@ Examples of code for this rule with `checksSpreads: true`:
 #### ❌ Incorrect
 
 ```ts
-const getData = () => someAsyncOperation({ myArg: 'foo' });
+const getData = () => someAsyncOperation({ myArg: "foo" });
 
 return { foo: 42, ...getData() };
 
 const getData2 = async () => {
-  await someAsyncOperation({ myArg: 'foo' });
+  await someAsyncOperation({ myArg: "foo" });
 };
 
 return { foo: 42, ...getData2() };
@@ -252,12 +252,12 @@ return { foo: 42, ...getData2() };
 #### ✅ Correct
 
 ```ts
-const getData = () => someAsyncOperation({ myArg: 'foo' });
+const getData = () => someAsyncOperation({ myArg: "foo" });
 
 return { foo: 42, ...(await getData()) };
 
 const getData2 = async () => {
-  await someAsyncOperation({ myArg: 'foo' });
+  await someAsyncOperation({ myArg: "foo" });
 };
 
 return { foo: 42, ...(await getData2()) };

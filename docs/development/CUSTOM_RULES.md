@@ -35,10 +35,10 @@ It takes in a function that transforms a rule name into its documentation URL, t
 This rule bans function declarations that start with a lower-case letter:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
+import { ESLintUtils } from "@typescript-eslint/utils";
 
 const createRule = ESLintUtils.RuleCreator(
-  name => `https://example.com/rule/${name}`,
+  (name) => `https://example.com/rule/${name}`
 );
 
 // Type: RuleModule<"uppercase", ...>
@@ -49,7 +49,7 @@ export const rule = createRule({
         if (node.id != null) {
           if (/^[a-z]/.test(node.id.name)) {
             context.report({
-              messageId: 'uppercase',
+              messageId: "uppercase",
               node: node.id,
             });
           }
@@ -57,17 +57,17 @@ export const rule = createRule({
       },
     };
   },
-  name: 'uppercase-first-declarations',
+  name: "uppercase-first-declarations",
   meta: {
     docs: {
       description:
-        'Function declaration names should start with an upper-case letter.',
-      recommended: 'warn',
+        "Function declaration names should start with an upper-case letter.",
+      recommended: "warn",
     },
     messages: {
-      uppercase: 'Start this name with an upper-case letter.',
+      uppercase: "Start this name with an upper-case letter.",
     },
-    type: 'suggestion',
+    type: "suggestion",
     schema: [],
   },
   defaultOptions: [],
@@ -83,14 +83,14 @@ It allows specifying generics for:
 If the rule is able to take in rule options, declare them as a tuple type containing a single object of rule options:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
+import { ESLintUtils } from "@typescript-eslint/utils";
 
-type MessageIds = 'lowercase' | 'uppercase';
+type MessageIds = "lowercase" | "uppercase";
 
 type Options = [
   {
-    preferredCase?: 'lower' | 'upper';
-  },
+    preferredCase?: "lower" | "upper";
+  }
 ];
 
 // Type: RuleModule<MessageIds, Options, ...>
@@ -105,7 +105,7 @@ Although it is generally not recommended to create custom rules without document
 It applies the same type inference as the `createRule`s above without enforcing a documentation URL.
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
+import { ESLintUtils } from "@typescript-eslint/utils";
 
 export const rule = ESLintUtils.RuleCreator.withoutDocs({
   create(context) {
@@ -130,7 +130,7 @@ You can query for them in your rule selectors.
 This version of the above rule instead bans interface declaration names that start with a lower-case letter:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
+import { ESLintUtils } from "@typescript-eslint/utils";
 
 export const rule = createRule({
   create(context) {
@@ -157,18 +157,18 @@ An `AST_NODE_TYPES` enum is exported as well to hold the values for AST node `ty
 For example, checking `node.type` can narrow down the type of the `node`:
 
 ```ts
-import { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils";
 
 export function describeNode(node: TSESTree.Node): string {
   switch (node.type) {
     case AST_NODE_TYPES.ArrayExpression:
-      return `Array containing ${node.elements.map(describeNode).join(', ')}`;
+      return `Array containing ${node.elements.map(describeNode).join(", ")}`;
 
     case AST_NODE_TYPES.Literal:
       return `Literal value ${node.raw}`;
 
     default:
-      return '🤷';
+      return "🤷";
   }
 }
 ```
@@ -181,15 +181,15 @@ In that case, it is best to add an explicit type declaration.
 This rule snippet targets name nodes of both function and interface declarations:
 
 ```ts
-import { AST_NODE_TYPES, ESLintUtils } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES, ESLintUtils } from "@typescript-eslint/utils";
 
 export const rule = createRule({
   create(context) {
     return {
-      'FunctionDeclaration, TSInterfaceDeclaration'(
+      "FunctionDeclaration, TSInterfaceDeclaration"(
         node:
           | AST_NODE_TYPES.FunctionDeclaration
-          | AST_NODE_TYPES.TSInterfaceDeclaration,
+          | AST_NODE_TYPES.TSInterfaceDeclaration
       ) {
         if (/^[a-z]/.test(node.id.name)) {
           // ...
@@ -222,9 +222,9 @@ By mapping from ESTree nodes to TypeScript nodes and retrieving the TypeScript p
 This rule bans for-of looping over an enum by using the type-checker via typescript-eslint and TypeScript APIs:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
-import * as ts from 'typescript';
-import * as tsutils from 'tsutils';
+import { ESLintUtils } from "@typescript-eslint/utils";
+import * as ts from "typescript";
+import * as tsutils from "tsutils";
 
 export const rule: eslint.Rule.RuleModule = {
   create(context) {
@@ -236,14 +236,14 @@ export const rule: eslint.Rule.RuleModule = {
 
         // 2. Find the backing TS node for the ES node, then that TS type
         const originalNode = parserServices.esTreeNodeToTSNodeMap.get(
-          node.right,
+          node.right
         );
         const nodeType = checker.getTypeAtLocation(originalNode);
 
         // 3. Check the TS node type using the TypeScript APIs
         if (tsutils.isTypeFlagSet(nodeType, ts.TypeFlags.EnumLike)) {
           context.report({
-            messageId: 'loopOverEnum',
+            messageId: "loopOverEnum",
             node: node.right,
           });
         }
@@ -252,13 +252,13 @@ export const rule: eslint.Rule.RuleModule = {
   },
   meta: {
     docs: {
-      category: 'Best Practices',
-      description: 'Avoid looping over enums.',
+      category: "Best Practices",
+      description: "Avoid looping over enums.",
     },
     messages: {
-      loopOverEnum: 'Do not loop over enums.',
+      loopOverEnum: "Do not loop over enums.",
     },
-    type: 'suggestion',
+    type: "suggestion",
     schema: [],
   },
 };
@@ -274,14 +274,14 @@ It should be provided with the same `parser` and `parserOptions` you would use i
 For rules that don't need type information, passing just the `parser` will do:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
-import rule from './my-rule';
+import { ESLintUtils } from "@typescript-eslint/utils";
+import rule from "./my-rule";
 
 const ruleTester = new ESLintUtils.RuleTester({
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
 });
 
-ruleTester.run('my-rule', rule, {
+ruleTester.run("my-rule", rule, {
   valid: [
     /* ... */
   ],
@@ -297,18 +297,18 @@ For rules that do need type information, `parserOptions` must be passed in as we
 Tests must have at least an absolute `tsconfigRootDir` path provided as well as a relative `project` path from that directory:
 
 ```ts
-import { ESLintUtils } from '@typescript-eslint/utils';
-import rule from './my-typed-rule';
+import { ESLintUtils } from "@typescript-eslint/utils";
+import rule from "./my-typed-rule";
 
 const ruleTester = new ESLintUtils.RuleTester({
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
     tsconfigRootDir: __dirname,
   },
 });
 
-ruleTester.run('my-typed-rule', rule, {
+ruleTester.run("my-typed-rule", rule, {
   valid: [
     /* ... */
   ],

@@ -473,7 +473,7 @@ class Foo {
 class Foo {
   protected logicInConstructor: string;
   constructor(logicInConstructor: string) {
-    console.log('Hello, world!');
+    console.log("Hello, world!");
     this.logicInConstructor = logicInConstructor;
   }
 }

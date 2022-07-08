@@ -8,9 +8,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 无论你是在新的 Typescript 代码库中添加 linting、还是在旧的代码库中添加 Typescript，或者从已废弃的 [TSLint](https://www.npmjs.com/package/tslint) 中迁移，步骤上并没有什么不同。
+
 ## 安装
 
 第一步先确保你已经安装所需的包：
+
 ```bash npm2yarn
 npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
@@ -18,6 +20,7 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 ## 配置
 
 下一步，在你的项目的根目录中创建一个 `.eslintrc.cjs` 配置文件,然后填充如下内容：
+
 <!-- prettier-ignore -->
 ```js title=".eslintrc.cjs"
 module.exports = {
@@ -36,11 +39,11 @@ module.exports = {
 这是我们推荐的最小的配置文件。随着你的深入(了解|学习),你可以添加更多的内容，但这些足够让你开始。
 :::info
 
-`.cjs`后缀将明确的将文件设置为[CommonJS module](https://nodejs.org/dist/latest-v18.x/docs/api/modules.html),如果你的项目的 package.json中有 `"type": "module"`。
+`.cjs`后缀将明确的将文件设置为[CommonJS module](https://nodejs.org/dist/latest-v18.x/docs/api/modules.html),如果你的项目的 package.json 中有 `"type": "module"`。
 
 > 注：`"type": "module"` 会使得`.js`结尾的文件将默认采取 `ES Module`来解析，具体可见[这里](https://nodejs.org/docs/latest-v13.x/api/esm.html#esm_enabling)。
 
-如果你的项目中没有使用 ESM， 那么`.eslintrc.js`这个文件名也是可以的。请看 [ESLint配置文件文档](https://eslint.org/docs/user-guide/configuring/configuration-files) 来了解更多。
+如果你的项目中没有使用 ESM， 那么`.eslintrc.js`这个文件名也是可以的。请看 [ESLint 配置文件文档](https://eslint.org/docs/user-guide/configuring/configuration-files) 来了解更多。
 :::
 
 ### 详情
@@ -49,12 +52,13 @@ module.exports = {
 
 - `parser: '@typescript-eslint/parser'` 告诉 ESLint 使用你安装的解析包 ([`@typescript-eslint/parser`](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/parser))。
   - 允许 ESLint 理解 TypeScript 语法。
-  - 这是必须的，否则 ESLint 将会抛出错误，当它尝试解析 TypeScript 代码会认为TypeScript代码是常规的 JavaScript 代码。
+  - 这是必须的，否则 ESLint 将会抛出错误，当它尝试解析 TypeScript 代码会认为 TypeScript 代码是常规的 JavaScript 代码。
 - `plugins: ['@typescript-eslint']` 告诉 ESLint 加载你安装的插件包 ([`@typescript-eslint/eslint-plugin`](https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin)).
   - 允许你在你的代码库中使用这些规则。
 - `extends: [ ... ]` 告诉 ESLint 你的配置拓展了给定的配置。
-  - `eslint:recommended` 是 ESLint的内置的推荐(recommended)配置 - 它开启了一套小且合理的规则，它是出名的最佳实践。
+  - `eslint:recommended` 是 ESLint 的内置的推荐(recommended)配置 - 它开启了一套小且合理的规则，它是出名的最佳实践。
   - `plugin:@typescript-eslint/recommended` 是我们(这里我们指 Typescript-eslint )推荐(recommended)配置 - 它就像 `eslint:recommend`, 只不过仅开启的规则来自我们(这里我们指 Typescript-eslint )的 TypeScript-specific 插件。
+
 ### 忽略不必要的文件
 
 接下来， 创建一个 `.eslintignore` 文件在你的项目的根目录。
@@ -93,9 +97,9 @@ yarn eslint .
 </TabItem>
 </Tabs>
 
-ESLint 将检查当前文件下所有的 TypeScript文件，并将结果输出到你的终端(terminal)。
+ESLint 将检查当前文件下所有的 TypeScript 文件，并将结果输出到你的终端(terminal)。
 
-建议你在你的 package.json中添加一个 npm 脚本，这样你就不必每次重复相同的命令来运行 ESLint。
+建议你在你的 package.json 中添加一个 npm 脚本，这样你就不必每次重复相同的命令来运行 ESLint。
 
 ```json title="package.json"
 {
@@ -116,7 +120,8 @@ npm run lint
 :::
 
 你还可以在绝大多数 IDE 中通过插件来实时获取结果 - 搜索你的 IDE 拓展。
-> 注：例如在 vscode的 extensions中搜索`tslint`。
+
+> 注：例如在 vscode 的 extensions 中搜索`tslint`。
 
 ## 下一步
 
@@ -135,13 +140,13 @@ npm run lint
 ```js title=".eslintrc.js"
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     // 加到这行
-    'prettier',
+    "prettier",
   ],
 };
 ```
@@ -149,11 +154,12 @@ module.exports = {
 ### 一些社区配置
 
 社区配置的存在是为了为你提供全面的基本配置，其目的是你可以添加配置并且他可以给你带来 "opinionated" 设置。
-> 注：有关"opinionated"的大致解释可以看这篇[文章](https://github.yanhaixiang.com/linter-tutorial/theory/history.html#prettier)
-ESLint生态中有许多社区配置包
-一些流行的 "一键" 配置:
 
-- Airbnb的 ESLint 配置: [`eslint-config-airbnb-typescript`](https://www.npmjs.com/package/eslint-config-airbnb-typescript).
+> 注：有关"opinionated"的大致解释可以看这篇[文章](https://github.yanhaixiang.com/linter-tutorial/theory/history.html#prettier)
+> ESLint 生态中有许多社区配置包
+> 一些流行的 "一键" 配置:
+
+- Airbnb 的 ESLint 配置: [`eslint-config-airbnb-typescript`](https://www.npmjs.com/package/eslint-config-airbnb-typescript).
 - 标准的: [`eslint-config-standard-with-typescript`](https://www.npmjs.com/package/eslint-config-standard-with-typescript).
 
 如果要使用他们中的一个完整的配置包，你应该用包名来替换 `extends`。
@@ -162,26 +168,26 @@ ESLint生态中有许多社区配置包
 ```js title=".eslintrc.js"
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   extends: [
     // 从这行开始删除
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     // 删到这里结束
     // 添加这行
-    'airbnb-typescript',
+    "airbnb-typescript",
   ],
 };
 ```
 
 <!-- markdownlint-disable MD044 -->
 
-搜索 ["eslint-config" 在npm中](https://www.npmjs.com/search?q=eslint-config) 了解更多。
+搜索 ["eslint-config" 在 npm 中](https://www.npmjs.com/search?q=eslint-config) 了解更多。
 
 ### 插件
 
-ESLint 插件在 ESLint之上提供了额外的规则和其他的功能。
+ESLint 插件在 ESLint 之上提供了额外的规则和其他的功能。
 下面是几个例子:
 
 - ESLint comment restrictions: [`eslint-plugin-eslint-comments`](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
@@ -196,25 +202,25 @@ ESLint 插件在 ESLint之上提供了额外的规则和其他的功能。
 ```js title=".eslintrc.js"
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   plugins: [
-    '@typescript-eslint',
+    "@typescript-eslint",
     // Add this line
-    'jest',
+    "jest",
   ],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     // Add this line
-    'plugin:jest/recommended',
+    "plugin:jest/recommended",
   ],
 };
 ```
 
 <!-- markdownlint-disable MD044 -->
 
-搜索 ["eslint-plugin" 在npm中](https://www.npmjs.com/search?q=eslint-plugin) 了解更多。
+搜索 ["eslint-plugin" 在 npm 中](https://www.npmjs.com/search?q=eslint-plugin) 了解更多。
 
 ## 疑难解答
 
-如果在这方面有问题，请查看我们的[疑难解答和FAQ](./TROUBLESHOOTING.md)。
+如果在这方面有问题，请查看我们的[疑难解答和 FAQ](./TROUBLESHOOTING.md)。

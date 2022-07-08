@@ -7,31 +7,31 @@ This operator allows you to safely cascade a value when dealing with `null` or `
 
 ```ts
 function myFunc(foo: string | null) {
-  return foo ?? 'a string';
+  return foo ?? "a string";
 }
 
 // is equivalent to
 
 function myFunc(foo: string | null) {
-  return foo !== null && foo !== undefined ? foo : 'a string';
+  return foo !== null && foo !== undefined ? foo : "a string";
 }
 ```
 
 Because the nullish coalescing operator _only_ coalesces when the original value is `null` or `undefined`, it is much safer than relying upon logical OR operator chaining `||`; which coalesces on any _falsy_ value:
 
 ```ts
-const emptyString = '';
+const emptyString = "";
 
-const nullish1 = emptyString ?? 'unsafe';
-const logical1 = emptyString || 'unsafe';
+const nullish1 = emptyString ?? "unsafe";
+const logical1 = emptyString || "unsafe";
 
 // nullish1 === ''
 // logical1 === 'unsafe'
 
 declare const nullString: string | null;
 
-const nullish2 = nullString ?? 'safe';
-const logical2 = nullString || 'safe';
+const nullish2 = nullString ?? "safe";
+const logical2 = nullString || "safe";
 
 // nullish2 === 'safe'
 // logical2 === 'safe'
@@ -48,7 +48,7 @@ type Options = [
   {
     ignoreConditionalTests?: boolean;
     ignoreMixedLogicalExpressions?: boolean;
-  },
+  }
 ];
 
 const defaultOptions = [

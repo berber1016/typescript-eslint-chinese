@@ -14,19 +14,19 @@ Examples of code for this rule:
 
 ```ts
 let bar: 2 = 2;
-let foo = <'bar'>'bar';
-let foo = { bar: 'baz' as 'baz' };
+let foo = <"bar">"bar";
+let foo = { bar: "baz" as "baz" };
 ```
 
 ### ✅ Correct
 
 ```ts
-let foo = 'bar';
-let foo = 'bar' as const;
-let foo: 'bar' = 'bar' as const;
-let bar = 'bar' as string;
-let foo = <string>'bar';
-let foo = { bar: 'baz' };
+let foo = "bar";
+let foo = "bar" as const;
+let foo: "bar" = "bar" as const;
+let bar = "bar" as string;
+let foo = <string>"bar";
+let foo = { bar: "baz" };
 ```
 
 <!--/tabs-->

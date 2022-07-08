@@ -35,8 +35,8 @@ class Mx {
     return 1;
   }
 
-  private get ['myField2']() {
-    return 'hello world';
+  private get ["myField2"]() {
+    return "hello world";
   }
 }
 ```
@@ -52,7 +52,7 @@ class Mx {
   // not a literal
   public readonly myField2 = [1, 2, 3];
 
-  private readonly ['myField3'] = 'hello world';
+  private readonly ["myField3"] = "hello world";
 
   public get myField4() {
     return `hello from ${window.location.href}`;
@@ -78,7 +78,7 @@ Examples of code with the `getters` style:
 class Mx {
   readonly myField1 = 1;
   readonly myField2 = `hello world`;
-  private readonly myField3 = 'hello world';
+  private readonly myField3 = "hello world";
 }
 ```
 
@@ -89,7 +89,7 @@ class Mx {
 
 class Mx {
   // no readonly modifier
-  public myField1 = 'hello';
+  public myField1 = "hello";
 
   // not a literal
   public readonly myField2 = [1, 2, 3];
@@ -98,8 +98,8 @@ class Mx {
     return 1;
   }
 
-  private get ['myField4']() {
-    return 'hello world';
+  private get ["myField4"]() {
+    return "hello world";
   }
 }
 ```

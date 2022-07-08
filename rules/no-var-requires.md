@@ -13,17 +13,17 @@ Examples of code for this rule:
 ### ❌ Incorrect
 
 ```ts
-var foo = require('foo');
-const foo = require('foo');
-let foo = require('foo');
+var foo = require("foo");
+const foo = require("foo");
+let foo = require("foo");
 ```
 
 ### ✅ Correct
 
 ```ts
-import foo = require('foo');
-require('foo');
-import foo from 'foo';
+import foo = require("foo");
+require("foo");
+import foo from "foo";
 ```
 
 ## Options
