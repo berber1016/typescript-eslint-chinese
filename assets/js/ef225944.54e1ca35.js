@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktypescript_eslint_chinese=self.webpackChunktypescript_eslint_chinese||[]).push([[2830],{6802:function(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"rules-docs"}')}}]);

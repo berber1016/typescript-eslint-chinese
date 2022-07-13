@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktypescript_eslint_chinese=self.webpackChunktypescript_eslint_chinese||[]).push([[5127],{2507:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var l=n(7294),c=n(8084),r=n(2566),s=n(272);function a(){var e=(0,c.ZP)();return l.createElement(r.Z,null,l.createElement("h2",null,"Global data"),l.createElement(s.Z,{src:e,collapseDepth:3}))}}}]);
