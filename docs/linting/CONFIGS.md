@@ -90,4 +90,4 @@ ESLint 允许你在任何拓展配置上配置自己的规则设置。
 
 ### 建议更改配置
 
-如果你强烈认为一个特定的规则应该(或不应该)在这个配置中，请随意[发起一个 issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) 并附上一个**详细的**理由来解释你的理论。
+如果你强烈认为一个特定的规则应该(或不应该)在这个配置中，请[发起一个 issue](https://github.com/typescript-eslint/typescript-eslint/issues/new/choose) 并附上一个**详细的**理由来解释你的理论。

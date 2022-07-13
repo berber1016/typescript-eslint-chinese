@@ -6,24 +6,25 @@ pagination_prev: null
 slug: /
 ---
 
-`@typescript-eslint/eslint-plugin` includes over 100 rules that detect best practice violations, bugs, and/or stylistic issues specifically for TypeScript code.
-See [Configs](/docs/linting/configs) for how to enable recommended rules using configs.
+`@typescript-eslint/eslint-plugin` 包含超过了 100 条规则，专门用于检测 TypeScript 代码中违反最佳实践、bug、和风格问题。
+
+参考 [Configs](/docs/linting/configs) 了解如何使用 configs 开启推荐规则。
 
 ## Supported Rules
 
 <!-- begin base rule list -->
 
-**Key**: :white_check_mark: = recommended, :lock: = strict, :wrench: = fixable, :thought_balloon: = requires type information
+**Key**: :white_check_mark: = 推荐(recommended), :lock: = strict, :wrench: = fixable, :thought_balloon: = requires type information
 
 | Name                                                                                                         | Description                                                                                                  | :white_check_mark::lock: | :wrench: | :thought_balloon: |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------ | -------- | ----------------- |
-| [`@typescript-eslint/adjacent-overload-signatures`](./adjacent-overload-signatures.md)                       | Require that member overloads be consecutive                                                                 | :white_check_mark:       |          |                   |
-| [`@typescript-eslint/array-type`](./array-type.md)                                                           | Require using either `T[]` or `Array<T>` for arrays                                                          | :lock:                   | :wrench: |                   |
-| [`@typescript-eslint/await-thenable`](./await-thenable.md)                                                   | Disallow awaiting a value that is not a Thenable                                                             | :white_check_mark:       |          | :thought_balloon: |
-| [`@typescript-eslint/ban-ts-comment`](./ban-ts-comment.md)                                                   | Disallow `@ts-<directive>` comments or require descriptions after directive                                  | :white_check_mark:       |          |                   |
-| [`@typescript-eslint/ban-tslint-comment`](./ban-tslint-comment.md)                                           | Disallow `// tslint:<rule-flag>` comments                                                                    | :lock:                   | :wrench: |                   |
-| [`@typescript-eslint/ban-types`](./ban-types.md)                                                             | Disallow certain types                                                                                       | :white_check_mark:       | :wrench: |                   |
-| [`@typescript-eslint/class-literal-property-style`](./class-literal-property-style.md)                       | Enforce that literals on classes are exposed in a consistent style                                           | :lock:                   | :wrench: |                   |
+| [`@typescript-eslint/adjacent-overload-signatures`](./adjacent-overload-signatures.md)                       | 规定**成员**重载是连续的                                                                                     | :white_check_mark:       |          |                   |
+| [`@typescript-eslint/array-type`](./array-type.md)                                                           | 规定数组使用 `T[]` 或者 `Array<T>`                                                                           | :lock:                   | :wrench: |                   |
+| [`@typescript-eslint/await-thenable`](./await-thenable.md)                                                   | 不允许等待(awaiting)非 "Thenable" 的值                                                                       | :white_check_mark:       |          | :thought_balloon: |
+| [`@typescript-eslint/ban-ts-comment`](./ban-ts-comment.md)                                                   | 不允许 `@ts-<directive>` 注释或规定指令(directive)后的描述                                                   | :white_check_mark:       |          |                   |
+| [`@typescript-eslint/ban-tslint-comment`](./ban-tslint-comment.md)                                           | 不允许 `// tslint:<rule-flag>` 注释                                                                          | :lock:                   | :wrench: |                   |
+| [`@typescript-eslint/ban-types`](./ban-types.md)                                                             | 不允许使用某些类型                                                                                           | :white_check_mark:       | :wrench: |                   |
+| [`@typescript-eslint/class-literal-property-style`](./class-literal-property-style.md)                       | 强制 class 上的字面量按照一致的风格(对外)暴露                                                                | :lock:                   | :wrench: |                   |
 | [`@typescript-eslint/consistent-generic-constructors`](./consistent-generic-constructors.md)                 | Enforce specifying generic type arguments on type annotation or constructor name of a constructor call       | :lock:                   | :wrench: |                   |
 | [`@typescript-eslint/consistent-indexed-object-style`](./consistent-indexed-object-style.md)                 | Require or disallow the `Record` type                                                                        | :lock:                   | :wrench: |                   |
 | [`@typescript-eslint/consistent-type-assertions`](./consistent-type-assertions.md)                           | Enforce consistent usage of type assertions                                                                  | :lock:                   |          |                   |

@@ -1,13 +1,13 @@
 # `await-thenable`
 
-Disallows awaiting a value that is not a Thenable.
+不允许等待非 `Thenable` 的值。
 
-This rule disallows awaiting a value that is not a "Thenable" (an object which has `then` method, such as a Promise).
-While it is valid JavaScript to await a non-`Promise`-like value (it will resolve immediately), this pattern is often a programmer error, such as forgetting to add parenthesis to call a function that returns a Promise.
+这条规则不允许等待非 `Thenable`(具有 `then` 方法的对象，例如 Promise )的值。
+虽然对于 Javacript 来说等待一个非`Promise`的值(它会立即解析)是有效的，但是这种模式通常是程序员的错误，比如忘记在调用返回 Promise 函数时添加圆括号。
 
-## Rule Details
+## 规则详情
 
-Examples of code for this rule:
+这条规则的代码示例：
 
 <!--tabs-->
 
@@ -40,13 +40,13 @@ await createValue();
 }
 ```
 
-This rule is not configurable.
+这条规则不是可配置的。
 
-## When Not To Use It
+## 什么时候不使用它
 
-If you want to allow code to `await` non-Promise values.
-This is generally not preferred, but can sometimes be useful for visual consistency.
+如果你想允许代码 `await` 非 Promise 的值。
+这通常不是首选，但有时对视觉一致性很有用。
 
-## Related To
+## 相关链接
 
 - TSLint: ['await-promise'](https://palantir.github.io/tslint/rules/await-promise)

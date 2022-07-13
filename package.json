@@ -17,10 +17,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.21",
-    "@docusaurus/plugin-sitemap": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "2.0.0-beta.21",
-    "@docusaurus/remark-plugin-npm2yarn": "2.0.0-beta.21",
+    "@docusaurus/core": "2.0.0-beta.22",
+    "@docusaurus/plugin-sitemap": "^2.0.0-beta.22",
+    "@docusaurus/preset-classic": "2.0.0-beta.22",
+    "@docusaurus/remark-plugin-npm2yarn": "2.0.0-beta.22",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
     "globby": "^13.1.2",
@@ -30,7 +30,7 @@
     "remark-docusaurus-tabs": "^0.2.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.22",
     "@tsconfig/docusaurus": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "eslint": "^8.19.0",

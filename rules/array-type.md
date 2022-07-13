@@ -1,12 +1,12 @@
 # `array-type`
 
-Requires using either `T[]` or `Array<T>` for arrays.
+规定数组使用 `T[]` 或者 `Array<T>`。
 
-Using the same style for array definitions across your codebase makes it easier for your developers to read and understand the types.
+在你的代码库中，使用相同的数组定义风格能够使得开发人员更容易阅读和理解类型。
 
 ## Rule Details
 
-This rule aims to standardize usage of array types within your codebase.
+这条规则宗旨是在你的代码库中标准化数组类型。
 
 ## Options
 
@@ -22,18 +22,18 @@ const defaultOptions: Options = {
 };
 ```
 
-The rule accepts an options object with the following properties:
+这条规则接受具有以下属性的 options 对象：
 
-- `default` - sets the array type expected for mutable cases.
-- `readonly` - sets the array type expected for readonly arrays. If this is omitted, then the value for `default` will be used.
+- `default` - 设置数组类型预期是可变的。
+- `readonly` - 设置数组类型预期是只读数组。如果省略，则将使用`default`。
 
-Each property can be set to one of three strings: `'array' | 'generic' | 'array-simple'`.
+每个属性都可以设置为这三个中的一个： `'array' | 'generic' | 'array-simple'`。
 
-The default config will enforce that all mutable and readonly arrays use the `'array'` syntax.
+默认配置将强制所有的可变的和只读的数组使用 `array` 语法。
 
 ### `"array"`
 
-Always use `T[]` or `readonly T[]` for all array types.
+对于所有的数组类型，始终使用 `T[]` 或者 `readonly T[]`。
 
 <!--tabs-->
 
@@ -53,7 +53,7 @@ const y: readonly string[] = ["a", "b"];
 
 ### `"generic"`
 
-Always use `Array<T>` or `ReadonlyArray<T>` for all array types.
+对于所有的数组类型，始终使用 `Array<T>` 或者 `ReadonlyArray<T>`。
 
 <!--tabs-->
 
@@ -73,8 +73,8 @@ const y: ReadonlyArray<string> = ["a", "b"];
 
 ### `"array-simple"`
 
-Use `T[]` or `readonly T[]` for simple types (i.e. types which are just primitive names or type references).
-Use `Array<T>` or `ReadonlyArray<T>` for all other types (union types, intersection types, object types, function types, etc).
+对于简单类型(类型仅是原始名称或者类型引用)使用 `T[]` 或者 `readonly T[]`。
+对于其他类型(联合类型、交叉类型、对象类型、函数类型)使用 `Array<T>` 或者 `ReadonlyArray<T>`。
 
 <!--tabs-->
 
@@ -100,9 +100,9 @@ const e: string[] = ["a", "b"];
 const f: readonly string[] = ["a", "b"];
 ```
 
-## Combination Matrix
+## 组合矩阵
 
-This matrix lists all possible option combinations and their expected results for different types of Arrays.
+这个矩阵列举了所有的可能组合的选项和不同类型数组的预期效果。
 
 | defaultOption  | readonlyOption | Array with simple type | Array with non simple type | Readonly array with simple type | Readonly array with non simple type |
 | -------------- | -------------- | ---------------------- | -------------------------- | ------------------------------- | ----------------------------------- |
@@ -119,6 +119,6 @@ This matrix lists all possible option combinations and their expected results fo
 | `generic`      | `array-simple` | `Array<number>`        | `Array<Foo & Bar>`         | `readonly number[]`             | `ReadonlyArray<Foo & Bar>`          |
 | `generic`      | `generic`      | `Array<number>`        | `Array<Foo & Bar>`         | `ReadonlyArray<number>`         | `ReadonlyArray<Foo & Bar>`          |
 
-## Related To
+## 相关链接
 
 - TSLint: [array-type](https://palantir.github.io/tslint/rules/array-type/)
